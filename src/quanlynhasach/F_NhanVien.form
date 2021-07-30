@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Menu class="java.awt.MenuBar" name="menuBar1">
+      <SubComponents>
+        <Menu class="java.awt.Menu" name="menu1">
+          <Properties>
+            <Property name="label" type="java.lang.String" value="File"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu1ActionPerformed"/>
+          </Events>
+        </Menu>
+        <Menu class="java.awt.Menu" name="menu2">
+          <Properties>
+            <Property name="label" type="java.lang.String" value="Edit"/>
+          </Properties>
+        </Menu>
+      </SubComponents>
+    </Menu>
+    <Component class="javax.swing.JMenuItem" name="jMenuItem1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btnGroup_NV_TinhTrang">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+    <Menu class="javax.swing.JMenuBar" name="menubar">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="1"/>
+        </Property>
+      </Properties>
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="mn_Pos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="POS"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mn_PosMouseClicked"/>
+          </Events>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="mn_QuanLy">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="QU&#x1ea2;N L&#xdd;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mn_QuanLyMouseClicked"/>
+          </Events>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="mn_KhachHang">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="KH&#xc1;CH H&#xc0;NG"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mn_KhachHangMouseClicked"/>
+          </Events>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="mn_NhanVien">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="NH&#xc2;N VI&#xca;N"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mn_NhanVienMouseClicked"/>
+          </Events>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="mn_HuongDan">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="H&#x1af;&#x1eda;NG D&#x1eaa;N"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mni_About">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="About"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mni_AboutMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mni_AboutActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="title" type="java.lang.String" value="Nh&#xe2;n Vi&#xea;n"/>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+    </Property>
+    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+      <Color id="Default Cursor"/>
+    </Property>
+    <Property name="focusCycleRoot" type="boolean" value="false"/>
+  </Properties>
+  <AccessibilityProperties>
+    <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
+  </AccessibilityProperties>
+  <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="menubar"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jTabbedPane1" alignment="1" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder>
+              <Color PropertyName="highlight" blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+              <Color PropertyName="shadow" blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+            </EtchetBorder>
+          </Border>
+        </Property>
+        <Property name="tabLayoutPolicy" type="int" value="1"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Default Cursor"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="0"/>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel3">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Nh&#xe2;n Vi&#xea;n">
+                <Property name="tabTitle" type="java.lang.String" value="Nh&#xe2;n Vi&#xea;n"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jPanel4" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jScrollPane3" min="-2" pref="857" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jScrollPane3" max="32767" attributes="0"/>
+                          <Component id="jPanel1" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tb_NhanVien">
+                  <Properties>
+                    <Property name="autoCreateRowSorter" type="boolean" value="true"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="13" style="0"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="7" rowCount="0">
+                        <Column editable="false" title="M&#xe3; nh&#xe2;n vi&#xea;n" type="java.lang.String"/>
+                        <Column editable="false" title="T&#xea;n nh&#xe2;n vi&#xea;n" type="java.lang.String"/>
+                        <Column editable="false" title="Gi&#x1edb;i t&#xed;nh" type="java.lang.String"/>
+                        <Column editable="false" title="Ng&#xe0;y sinh" type="java.lang.String"/>
+                        <Column editable="false" title="S&#x1ed1; CMND" type="java.lang.String"/>
+                        <Column editable="false" title="&#x110;i&#x1ec7;n tho&#x1ea1;i" type="java.lang.String"/>
+                        <Column editable="false" title="T&#xec;nh tr&#x1ea1;ng" type="java.lang.String"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                    </Property>
+                    <Property name="rowHeight" type="int" value="25"/>
+                    <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="d0" green="82" red="17" type="rgb"/>
+                    </Property>
+                    <Property name="selectionMode" type="int" value="0"/>
+                    <Property name="showGrid" type="boolean" value="true"/>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tb_NhanVienMouseClicked"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel4">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ef" green="75" red="27" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="bc" green="27" red="0" type="rgb"/>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="tf_NV_Search" min="-2" pref="770" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btn_NV_Search" min="-2" pref="55" max="-2" attributes="0"/>
+                          <EmptySpace pref="393" max="32767" attributes="0"/>
+                          <Component id="lb_NV_NhanVien" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="tf_NV_Search" alignment="1" pref="37" max="32767" attributes="0"/>
+                              <Component id="lb_NV_NhanVien" alignment="1" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="btn_NV_Search" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JTextField" name="tf_NV_Search">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="18" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="80" green="80" red="80" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Nh&#x1ead;p t&#xea;n ho&#x1eb7;c m&#xe3; nh&#xe2;n vi&#xea;n"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tf_NV_SearchFocusGained"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tf_NV_SearchFocusLost"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tf_NV_SearchMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_NV_SearchActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JToggleButton" name="btn_NV_Search">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="T&#xec;m"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_NV_SearchActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lb_NV_NhanVien">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="18" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Nguy&#x1ec5;n Duy H&#x1ea3;i"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel1">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel35" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Component id="tf_NV_DienThoai" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel34" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Component id="tf_NV_CMND" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel36" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="btn_NV_CapNhap" min="-2" pref="118" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="btn_NhanVien_Them" min="-2" pref="113" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="rb_NV_DangLamViec" max="32767" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="rb_NV_NgungLamViec" min="-2" pref="126" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel28" min="-2" pref="152" max="-2" attributes="0"/>
+                                      <Component id="jLabel29" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
+                                      <Component id="jLabel33" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="tf_NV_TenNV" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="rb_NV_Nam" min="-2" pref="93" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="rb_NV_Nu" min="-2" pref="93" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="date_NV_NgaySinh" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lb_NV_New" min="-2" pref="28" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tf_NV_TenNV" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="lb_NV_New" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="rb_NV_Nu" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="rb_NV_Nam" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel33" alignment="3" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="date_NV_NgaySinh" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="jLabel29" min="-2" pref="29" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_NV_CMND" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_NV_DienThoai" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="rb_NV_DangLamViec" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel36" alignment="3" max="32767" attributes="0"/>
+                              <Component id="rb_NV_NgungLamViec" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btn_NV_CapNhap" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="btn_NhanVien_Them" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel28">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="T&#xea;n nh&#xe2;n vi&#xea;n"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="tf_NV_TenNV">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="0"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel29">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JToggleButton" name="btn_NhanVien_Them">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_NhanVien_ThemActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="rb_NV_Nu">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="buttonGroup1"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="N&#x1eef;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="rb_NV_Nam">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="buttonGroup1"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="0"/>
+                    </Property>
+                    <Property name="selected" type="boolean" value="true"/>
+                    <Property name="text" type="java.lang.String" value="Nam"/>
+                  </Properties>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="date_NV_NgaySinh">
+                  <Properties>
+                    <Property name="date" type="java.util.Date" editor="org.netbeans.beaninfo.editors.DateEditor">
+                      <SerializedValue value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,117,116,105,108,46,68,97,116,101,104,106,-127,1,75,89,116,25,3,0,0,120,112,119,8,0,0,1,122,82,28,95,72,120"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel33">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Gi&#x1edb;i t&#xed;nh"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="tf_NV_CMND">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="0"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_NV_CMNDKeyTyped"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel34">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="S&#x1ed1; CMND"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel35">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="S&#x1ed1; &#x111;i&#x1ec7;n tho&#x1ea1;i"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="tf_NV_DienThoai">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="0"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_NV_DienThoaiKeyTyped"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JToggleButton" name="btn_NV_CapNhap">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;p"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_NV_CapNhapActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel36">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="T&#xec;nh tr&#x1ea1;ng"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="rb_NV_DangLamViec">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="btnGroup_NV_TinhTrang"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="0"/>
+                    </Property>
+                    <Property name="selected" type="boolean" value="true"/>
+                    <Property name="text" type="java.lang.String" value="&#x110;ang l&#xe0;m vi&#x1ec7;c"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="rb_NV_NgungLamViec">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="btnGroup_NV_TinhTrang"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Ng&#x1eeb;ng l&#xe0;m vi&#x1ec7;c"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lb_NV_New">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Image/icons8_plus_20px.png"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_NV_NewMouseClicked"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="T&#xe0;i kho&#x1ea3;n">
+                <Property name="tabTitle" type="java.lang.String" value="T&#xe0;i kho&#x1ea3;n"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jPanel10" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jScrollPane6" min="-2" pref="857" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jScrollPane6" alignment="0" pref="568" max="32767" attributes="0"/>
+                          <Component id="jPanel11" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tb_TaiKhoan">
+                  <Properties>
+                    <Property name="autoCreateRowSorter" type="boolean" value="true"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="13" style="0"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="3" rowCount="0">
+                        <Column editable="false" title="T&#xea;n &#x111;&#x103;ng nh&#x1ead;p" type="java.lang.String"/>
+                        <Column editable="false" title="M&#xe3; nh&#xe2;n vi&#xea;n" type="java.lang.String"/>
+                        <Column editable="false" title="T&#xea;n nh&#xe2;n vi&#xea;n" type="java.lang.String"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="d8" green="d8" red="d8" type="rgb"/>
+                    </Property>
+                    <Property name="rowHeight" type="int" value="25"/>
+                    <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="d0" green="82" red="17" type="rgb"/>
+                    </Property>
+                    <Property name="selectionMode" type="int" value="0"/>
+                    <Property name="showGrid" type="boolean" value="true"/>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tb_TaiKhoanMouseClicked"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel10">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ef" green="75" red="27" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="bc" green="27" red="0" type="rgb"/>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="tf_TK_Search" min="-2" pref="779" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btn_TK_Search" min="-2" pref="55" max="-2" attributes="0"/>
+                          <EmptySpace pref="399" max="32767" attributes="0"/>
+                          <Component id="lb_TK_NhanVien" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                  <Component id="lb_TK_NhanVien" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="tf_TK_Search" pref="37" max="32767" attributes="0"/>
+                              <Component id="btn_TK_Search" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JTextField" name="tf_TK_Search">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="18" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="80" green="80" red="80" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Nh&#x1ead;p t&#xea;n nh&#xe2;n vi&#xea;n, m&#xe3; nh&#xe2;n vi&#xea;n ho&#x1eb7;c t&#xea;n &#x111;&#x103;ng nh&#x1ead;p"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tf_TK_SearchFocusGained"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tf_TK_SearchFocusLost"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tf_TK_SearchMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_TK_SearchActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JToggleButton" name="btn_TK_Search">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="T&#xec;m"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_TK_SearchActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lb_TK_NhanVien">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="18" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Nguy&#x1ec5;n Duy H&#x1ea3;i"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel11">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel30" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <EmptySpace pref="34" max="32767" attributes="0"/>
+                                  <Component id="tf_TK_MaNV" min="-2" pref="259" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel31" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="tf_TK_TenNV" min="-2" pref="259" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel37" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="btn_TK_Xoa" min="-2" pref="118" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="btn_TK_Them" min="-2" pref="113" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="tf_TK_TenDangNhap" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lb_TK_New" min="-2" pref="30" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lb_TK_New" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf_TK_MaNV" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf_TK_TenNV" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_TK_TenDangNhap" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btn_TK_Xoa" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="btn_TK_Them" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="342" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel30">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="M&#xe3; nh&#xe2;n vi&#xea;n"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="tf_TK_MaNV">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="0"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tf_TK_MaNVFocusLost"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel31">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="T&#xea;n nh&#xe2;n vi&#xea;n"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="tf_TK_TenNV">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="0"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JToggleButton" name="btn_TK_Them">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_TK_ThemActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JToggleButton" name="btn_TK_Xoa">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_TK_XoaActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel37">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="T&#xea;n &#x111;&#x103;ng nh&#x1ead;p"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="tf_TK_TenDangNhap">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Times New Roman" size="14" style="0"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_TK_TenDangNhapKeyTyped"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lb_TK_New">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Image/icons8_plus_20px.png"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_TK_NewMouseClicked"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
