@@ -12,8 +12,6 @@ import DTO.KhachHang;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
 
 /**
  *
@@ -38,7 +36,7 @@ public class BKhachHang {
         String sql = "EXEC P_GetAllKhachHang";
         DataProvider.getInstance().Open();
         ResultSet rs = DataProvider.getInstance().executeQuery(sql);
-
+        
         khachHangs = new ArrayList<KhachHang>();
         while(rs.next())
         {
