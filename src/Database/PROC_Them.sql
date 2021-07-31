@@ -176,8 +176,35 @@ BEGIN
 	VALUES
 	     ( dbo.F_NewID_NhomSach(), @TenNhom, @TinhTrang )
 END
+GO
+-------------------------------------------------------------------------------------------------------------------------------------------
 
+CREATE PROC P_ThemHoaDon
+	@MaHoaDon CHAR(10), @MaNhanVien CHAR(10), @MaKhachHang CHAR(10), @NgayBan DATE
+AS
+BEGIN
+	INSERT INTO dbo.HOADON ( MaHoaDon, MaNhanVien, MaKhachHang, NgayBan )
+	VALUES
+	     ( dbo.F_NewID_HoaDon(),@MaNhanVien , @MaKhachHang, @NgayBan )
+END
+GO
 
+EXEC dbo.P_ThemHoaDon @MaHoaDon = '', @MaNhanVien = '', @MaKhachHang = '', @NgayBan = '2021-07-31'
+GO
+
+CREATE PROC P_ThemChiTietHoaDon
+	@MaSach CHAR(10), @DonGia MONEY, @SoLuong INT
+AS
+BEGIN
+	DECLARE @dem INT;
+	SELECT @dem = COUNT(*) FROM  dbo.HoaDon
+	DECLARE @MaHoaDon CHAR(10) = 'HD00' + CONVERT(CHAR(10),@dem)
+
+	INSERT INTO dbo.CHITIETHOADON ( MaHoaDon, MaSach, DonGia, SoLuong )
+	VALUES
+	     (@MaHoaDon,@MaSach , @DonGia, @SoLuong )
+END
+GO
 
 
 

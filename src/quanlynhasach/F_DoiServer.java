@@ -244,20 +244,47 @@ public class F_DoiServer extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_KiemTraKetNoiActionPerformed
 
     private void cb_DatabaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_DatabaseMouseClicked
-        cb_Database.removeAllItems();
-        try{
-            String sql = "SELECT name FROM sys.databases";
-            DataProviderCheck dt = new DataProviderCheck(tf_Server.getText(), tf_UserID.getText(), tf_Password.getText(),"master");
-            
-            dt.Open();
-            ResultSet rs = dt.executeQuery(sql);
-            
-            while(rs.next()){
-                cb_Database.addItem(rs.getString("name"));
+        String thongBao = "";
+        boolean flag = true;
+        if (tf_Server.getText().length() == 0){
+            thongBao = thongBao + "\nTên server không được để trống";
+            flag = false;
+        }
+        if (!rb_XacThucWin.isSelected()) {
+            if (tf_UserID.getText().length() == 0){
+                thongBao = thongBao + "\nUser ID không được để trống";
+                flag = false;
             }
-            dt.Close();
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(this, "Lấy danh sách database lỗi");
+            if (tf_Password.getText().length() == 0){
+                thongBao = thongBao + "\nPassword không được để trống";
+                flag = false;
+            }
+        }
+        
+        if (flag) {
+            cb_Database.removeAllItems();
+            try{
+                DataProviderCheck dt = null;
+                String sql = "SELECT name FROM sys.databases";
+                if (!rb_XacThucWin.isSelected()) {
+                    dt = new DataProviderCheck(tf_Server.getText(), tf_UserID.getText(), tf_Password.getText(),"master");
+                }
+                else
+                    dt = new DataProviderCheck(tf_Server.getText(), null, null,"master");
+
+                dt.Open();
+                ResultSet rs = dt.executeQuery(sql);
+
+                while(rs.next()){
+                    cb_Database.addItem(rs.getString("name"));
+                }
+                dt.Close();
+            }catch(Exception e){
+                thongBao = "Lấy danh sách database lỗi";
+            }
+        }
+        if (thongBao.length() != 0) {
+            JOptionPane.showMessageDialog(this, thongBao);
         }
     }//GEN-LAST:event_cb_DatabaseMouseClicked
 

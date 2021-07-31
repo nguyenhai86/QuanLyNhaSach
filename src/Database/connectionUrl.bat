@@ -1,1 +1,1 @@
-jdbc:sqlserver://NguyenHaiPC:1433;databaseName=QLNS;user=sa;password=123
+jdbc:sqlserver://NguyenHaiPC:1433;databaseName=master;user=sa;password=123

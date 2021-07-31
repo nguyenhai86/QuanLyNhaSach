@@ -10,6 +10,8 @@ import DTO.DateBox;
 import DTO.HoaDon;
 import DAL.DataProvider;
 import DTO.ChiTietHoaDon;
+import DTO.NhanVien;
+import DTO.Sach;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -107,5 +109,19 @@ public class BHoaDon {
         }
         DataProvider.getInstance().Close();
         return hoaDons;
+    }
+     public boolean ThemHoaDon(HoaDon hoaDon, ArrayList<Sach> sachs) throws SQLException{
+        boolean result = false;
+        String sql_HoaDon = "SET DATEFORMAT DMY EXEC dbo.P_ThemHoaDon @MaNhanVien = ?, @MaKhachHang = ?, @NgayBan =?";
+        String sql_ChiTietHD = "EXEC dbo.P_ThemChiTietHoaDon @MaSach = ?, @DonGia = ?, @SoLuong = ?";
+        DataProvider.getInstance().Open();
+        result = DataProvider.getInstance().executeUpdatePrepareStatement(sql_HoaDon, new Object[]{hoaDon.getNhanVien(), hoaDon.getKhachHang(), DateBox.ConvertToString(hoaDon.getNgayBan())}) > 0;
+         if (result) {
+             for (int i = 0; i < sachs.size(); i++) {
+                 result = DataProvider.getInstance().executeUpdatePrepareStatement(sql_ChiTietHD, new Object[]{sachs.get(i).getMaSach(), sachs.get(i).getGiaBan(), sachs.get(i).getSoLuong()}) > 0;
+             }
+         }
+        DataProvider.getInstance().Close();
+        return result ;
     }
 }

@@ -2,16 +2,16 @@ USE QLNS
 GO
 
 --================================================================================================================================================================================================
-CREATE PROC P_GetAllKhachHang
+ALTER PROC P_GetAllKhachHang
 AS
 BEGIN
-    SELECT dbo.KHACHHANG.MaKhachHang, TenKhachHang, TenNhom, DienThoai, TongTien, MaxNgay.LanCuoiMuaHang, TinhTrang
+    SELECT dbo.KHACHHANG.MaKhachHang, TenKhachHang, TenNhom, DienThoai, TruyVanCon.TongTien , TruyVanCon.LanCuoiMuaHang, TinhTrang
     FROM dbo.KHACHHANG
     JOIN dbo.NHOMKHACHHANG ON NHOMKHACHHANG.MaNhomKhachHang = KHACHHANG.MaNhomKhachHang
     LEFT JOIN
-           (   SELECT MaKhachHang, MAX(NgayBan) AS 'LanCuoiMuaHang'
+           (   SELECT MaKhachHang, MAX(NgayBan) AS 'LanCuoiMuaHang', SUM(TongTien) AS 'TongTien'
                FROM dbo.HOADON
-               GROUP BY MaKhachHang ) MaxNgay ON MaxNgay.MaKhachHang = KHACHHANG.MaKhachHang
+               GROUP BY MaKhachHang ) TruyVanCon ON TruyVanCon.MaKhachHang = KHACHHANG.MaKhachHang
 	ORDER BY CONVERT(INT,SUBSTRING(KHACHHANG.MaKhachHang,3,100)) DESC
 END;
 GO
@@ -19,17 +19,17 @@ GO
 EXEC dbo.P_GetAllKhachHang
 GO
 
-CREATE PROC P_SeachKH
+ALTER PROC P_SeachKH
 	@MaKH CHAR(10), @TenKH NVARCHAR(40), @DienThoai CHAR(10)
 AS
 BEGIN
-    SELECT dbo.KHACHHANG.MaKhachHang, TenKhachHang, TenNhom, DienThoai, TongTien, MaxNgay.LanCuoiMuaHang, TinhTrang
+    SELECT dbo.KHACHHANG.MaKhachHang, TenKhachHang, TenNhom, DienThoai, TruyVanCon.TongTien , TruyVanCon.LanCuoiMuaHang, TinhTrang
     FROM dbo.KHACHHANG
      JOIN dbo.NHOMKHACHHANG ON NHOMKHACHHANG.MaNhomKhachHang = KHACHHANG.MaNhomKhachHang
      LEFT JOIN
-           (   SELECT MaKhachHang, MAX(NgayBan) AS 'LanCuoiMuaHang'
+           (   SELECT MaKhachHang, MAX(NgayBan) AS 'LanCuoiMuaHang', SUM(TongTien) AS 'TongTien'
                FROM dbo.HOADON
-               GROUP BY MaKhachHang ) MaxNgay ON MaxNgay.MaKhachHang = KHACHHANG.MaKhachHang
+               GROUP BY MaKhachHang ) TruyVanCon ON TruyVanCon.MaKhachHang = KHACHHANG.MaKhachHang
 	WHERE KHACHHANG.MaKhachHang LIKE @MaKH OR TenKhachHang LIKE @TenKH OR DienThoai = @DienThoai 
 	ORDER BY CONVERT(INT,SUBSTRING(KHACHHANG.MaKhachHang,3,100)) DESC
 END;
@@ -170,13 +170,13 @@ CREATE PROC P_GetKhachHangBySDT
 	@DienThoai CHAR(10)
 AS
 BEGIN
-    SELECT dbo.KHACHHANG.MaKhachHang, TenKhachHang, TenNhom, DienThoai, TongTien, MaxNgay.LanCuoiMuaHang, TinhTrang
+    SELECT dbo.KHACHHANG.MaKhachHang, TenKhachHang, TenNhom, DienThoai, TruyVanCon.TongTien , TruyVanCon.LanCuoiMuaHang, TinhTrang
     FROM dbo.KHACHHANG
         JOIN dbo.NHOMKHACHHANG ON NHOMKHACHHANG.MaNhomKhachHang = KHACHHANG.MaNhomKhachHang
         LEFT JOIN
-           (   SELECT MaKhachHang, MAX(NgayBan) AS 'LanCuoiMuaHang'
+           (   SELECT MaKhachHang, MAX(NgayBan) AS 'LanCuoiMuaHang', SUM(TongTien) AS 'TongTien'
                FROM dbo.HOADON
-               GROUP BY MaKhachHang ) MaxNgay ON MaxNgay.MaKhachHang = KHACHHANG.MaKhachHang
+               GROUP BY MaKhachHang ) TruyVanCon ON TruyVanCon.MaKhachHang = KHACHHANG.MaKhachHang
 	WHERE DienThoai = @DienThoai
 END;
 GO
@@ -186,13 +186,13 @@ CREATE PROC P_GetKhachHangByMa
 	@MaKH CHAR(10)
 AS
 BEGIN
-    SELECT dbo.KHACHHANG.MaKhachHang, TenKhachHang, TenNhom, DienThoai, TongTien, MaxNgay.LanCuoiMuaHang, TinhTrang
+    SELECT dbo.KHACHHANG.MaKhachHang, TenKhachHang, TenNhom, DienThoai, TruyVanCon.TongTien , TruyVanCon.LanCuoiMuaHang, TinhTrang
     FROM dbo.KHACHHANG
         JOIN dbo.NHOMKHACHHANG ON NHOMKHACHHANG.MaNhomKhachHang = KHACHHANG.MaNhomKhachHang
         JOIN
-           (   SELECT MaKhachHang, MAX(NgayBan) AS 'LanCuoiMuaHang'
+           (   SELECT MaKhachHang, MAX(NgayBan) AS 'LanCuoiMuaHang', SUM(TongTien) AS 'TongTien'
                FROM dbo.HOADON
-               GROUP BY MaKhachHang ) MaxNgay ON MaxNgay.MaKhachHang = KHACHHANG.MaKhachHang
+               GROUP BY MaKhachHang ) TruyVanCon ON TruyVanCon.MaKhachHang = KHACHHANG.MaKhachHang
 	WHERE KHACHHANG.MaKhachHang = @MaKH
 END;
 GO
@@ -210,6 +210,3 @@ BEGIN
 END;
 GO
 
-
-EXEC dbo.P_GetKhachHangBySDT @DienThoai = '0326224344'
-EXEC dbo.P_GetAllKhachHang
