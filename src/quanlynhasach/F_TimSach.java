@@ -217,6 +217,9 @@ public class F_TimSach extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Lỗi load dữ liệu: " +  ex.getMessage());
         }
     }
+    public void Reset(){
+        btn_Sach_BoLoc.doClick();
+    }
     public void Table_Header_Component(JTable table){
         table.getTableHeader().setFont(new Font("Times New Roman", Font.BOLD,15));
         table.getTableHeader().setOpaque(false);

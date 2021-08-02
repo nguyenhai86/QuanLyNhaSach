@@ -35,7 +35,7 @@ CREATE TABLE TAIKHOAN
 CREATE TABLE NHACUNGCAP
 (
     MaNCC       CHAR(10) NOT NULL PRIMARY KEY,
-    TenNCC      NVARCHAR(50) NOT NULL,
+    TenNCC      NVARCHAR(50) NOT NULL UNIQUE,
     DienThoai   CHAR(10) NOT NULL,
     TongTien	MONEY DEFAULT 0,
 	TinhTrang BIT DEFAULT 1,--1: Đang cung cấp, ngừng cung cấp
@@ -159,12 +159,11 @@ VALUES
 
 INSERT INTO KHACHHANG(MaKhachHang,TenKhachHang,MaNhomKhachHang,DienThoai,TongTien)
 VALUES
-    ( 'KH001', N'Nguyễn Thái Sơn', 'NKH001', '0356842568', NULL ),
+    ( 'KH001', N'Khách vô danh', 'NKH001', '0', NULL ),
     ( 'KH002', N'Phạm Thành Lộc', 'NKH001', '0842563958', NULL ),
     ( 'KH003', N'Hồ Quý Phi', 'NKH002', '0341576254', NULL ),
     ( 'KH004', N'Lưu Văn Anh', 'NKH001', '0345263587', NULL ),
     ( 'KH005', N'Phạm Hồ Quỳnh Anh', 'NKH003', '024586145', NULL );
-
 
 INSERT INTO NHOMSACH(MaNhomSach,TenNhom)
 VALUES

@@ -32,8 +32,7 @@ public class BNhaCungCap {
     }
     private BNhaCungCap(){}
     
-    public ArrayList<NhaCungCap> getNhaCungCaps() throws SQLException
-    {
+    public ArrayList<NhaCungCap> getNhaCungCaps() throws SQLException{
         ArrayList<NhaCungCap> nhaCungCaps = null;
         String sql = "EXEC P_getNhaCungCap";
         DataProvider.getInstance().Open();
@@ -52,7 +51,22 @@ public class BNhaCungCap {
         DataProvider.getInstance().Close();
         return nhaCungCaps;
     }
-    
+    public NhaCungCap getNhaCungCapByTenNCC(String tenNCC) throws SQLException{
+        String sql = "SELECT * FROM dbo.NHACUNGCAP WHERE TenNCC = ?";
+        DataProvider.getInstance().Open();
+        ResultSet rs = DataProvider.getInstance().executeQueryPrepareStatement(sql, new Object[]{tenNCC});
+        NhaCungCap nhaCungCap = null;
+        while(rs.next())
+        {
+            nhaCungCap = new NhaCungCap();
+            nhaCungCap.setMaNhaCC(rs.getString("MaNCC").trim());
+            nhaCungCap.setTenNhaCC(rs.getString("TenNCC").trim());
+            nhaCungCap.setDienThoai(rs.getString("DienThoai").trim());
+            nhaCungCap.setTinhTrang(rs.getBoolean("TinhTrang"));
+        }
+        DataProvider.getInstance().Close();
+        return nhaCungCap;
+    }
     public ArrayList<NhaCungCap> searchNCC(String value) throws SQLException{
         ArrayList<NhaCungCap> nhaCungCaps = null;
         String sql = "SELECT * FROM dbo.NHACUNGCAP WHERE MaNCC LIKE ? OR TenNCC LIKE ? OR DienThoai = ? ORDER BY CONVERT(INT,SUBSTRING(dbo.NHACUNGCAP.MaNCC,4,100)) DESC";

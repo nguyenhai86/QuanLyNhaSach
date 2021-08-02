@@ -1124,7 +1124,7 @@ public class F_KhachHang extends javax.swing.JFrame {
             else{
                 KhachHang temp = BKhachHang.getInstance().getKhachHangBySDT(tf_KH_DienThoai.getText().trim());
                 if (temp != null && !temp.getMaKhachHang().equals((String)mode.getValueAt(index, 0))) {
-                    thongBao = thongBao + "\nSố điệnh thoại đã được đăng ký bởi khách hàng " + "\t"+ temp.getMaKhachHang() + "\t" + temp.getTenKhachHang();
+                    thongBao = thongBao + "\nSố điện thoại đã được đăng ký bởi khách hàng " + "\t"+ temp.getMaKhachHang() + "\t" + temp.getTenKhachHang();
                     flag = false;
                 }
             }
@@ -1458,7 +1458,14 @@ public class F_KhachHang extends javax.swing.JFrame {
                 thongBao = thongBao + "\nTên nhà cung cấp không được để trống";
                 flag = false;
             }
-
+            else{
+                NhaCungCap nhaCungCap = BNhaCungCap.getInstance().getNhaCungCapByTenNCC(tf_NCC_TenNCC.getText().trim());
+                if (nhaCungCap != null) {
+                    thongBao = thongBao + "\nTên nhà cung cấp da ton tai";
+                    flag = false;
+                }
+            }
+            
             if (flag) {
                 NhaCungCap ncc = new NhaCungCap();
                 ncc.setTenNhaCC(tf_NCC_TenNCC.getText().trim());
@@ -1515,6 +1522,13 @@ public class F_KhachHang extends javax.swing.JFrame {
             if (tf_NCC_TenNCC.getText().trim().length() == 0) {
                 thongBao = thongBao + "\nTên nhà cung cấp không được để trống";
                 flag = false;
+            }
+            else{
+                NhaCungCap nhaCungCap = BNhaCungCap.getInstance().getNhaCungCapByTenNCC(tf_NCC_TenNCC.getText().trim());
+                if (nhaCungCap != null&& !nhaCungCap.getMaNhaCC().equals((String)mode.getValueAt(index, 0))) {
+                    thongBao = thongBao + "\nTên nhà cung cấp da ton tai";
+                    flag = false;
+                }
             }
 
             if (flag) {

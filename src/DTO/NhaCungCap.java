@@ -46,5 +46,4 @@ public class NhaCungCap {
     public void setTinhTrang(Boolean tinhTrang) {
         this.tinhTrang = tinhTrang;
     }
-    
 }
