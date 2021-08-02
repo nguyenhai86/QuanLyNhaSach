@@ -43,3 +43,16 @@ GO
 
 SELECT * FROM dbo.HOADON
 JOIN dbo.CHITIETHOADON ON CHITIETHOADON.MaHoaDon = HOADON.MaHoaDon
+GO
+
+--===================================================================================================================================================================================================
+CREATE TRIGGER TRG_ThemChiTietPhieuNhap
+ON dbo.CHITIETPHIEUNHAP
+FOR INSERT
+AS
+	UPDATE dbo.SACH SET SoLuong = SoLuong + (SELECT Inserted.SoLuong FROM Inserted)
+	WHERE SACH.MaSach IN (SELECT Inserted.MaSach FROM Inserted)
+
+	UPDATE dbo.PhieuNhap SET TongTien = (SELECT SUM(DonGia*SoLuong) FROM dbo.CHITIETPHIEUNHAP WHERE MaPhieuNhap = (SELECT Inserted.MaPhieuNhap FROM Inserted))
+	WHERE PHIEUNHAP.MaPhieuNhap = (SELECT Inserted.MaPhieuNhap FROM Inserted)
+GO

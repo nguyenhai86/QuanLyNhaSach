@@ -763,7 +763,7 @@ public class F_Pos extends javax.swing.JFrame {
                 thongBao = thongBao + "\nDanh sách đơn hàng rỗng";
                 flag = false;
             }
-            if (tf_TenKhachHang.getText().equals(null) || tf_TenKhachHang.getText().trim().length() == 0) {
+            if (khachHang == null) {
                 khachHang = BKhachHang.getInstance().getKhachHangByMa("KH001");
             }
             if (Double.valueOf(lb_ThoiLai.getText()) < 0) {
@@ -778,7 +778,7 @@ public class F_Pos extends javax.swing.JFrame {
                     if (BHoaDon.getInstance().ThemHoaDon(hoaDon, sachs)) {
                         thongBao = "Thanh toán thành công";
                         Reset();
-                        
+                        khachHang = null;
                     } else {
                         thongBao = "Thanh toán không thành công";
                     }
@@ -787,6 +787,8 @@ public class F_Pos extends javax.swing.JFrame {
             thongBao = "ERROR: " + e.getMessage();
         }
         khachHang = null;
+        tf_SoDienThoai = null;
+        tf_TenKhachHang.setText(null);
         JOptionPane.showMessageDialog(this, thongBao);
     }//GEN-LAST:event_btn_ThanhToanActionPerformed
 

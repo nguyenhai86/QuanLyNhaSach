@@ -204,8 +204,33 @@ END
 GO
 
 EXEC dbo.P_ThemChiTietHoaDon @MaSach = '', @DonGia = NULL, @SoLuong = 0
+GO
 
 
 
 
+-------------------------------------------------------------------------------------------------------------------------------------------
+CREATE PROC P_ThemPhieuNhap
+	@MaNhanVien CHAR(10), @MaNhaCungCap CHAR(10), @NgayNhap DATE
+AS
+BEGIN
+	INSERT INTO dbo.PHIEUNHAP ( MaPhieuNhap, MaNhanVien, NgayNhap, MaNCC )
+	VALUES
+	     ( dbo.F_NewID_PhieuNhap(),@MaNhanVien , @NgayNhap, @MaNhaCungCap)
+END
+GO
 
+
+CREATE PROC P_ThemChiTietPhieuNhap
+	@MaSach CHAR(10), @DonGia MONEY, @SoLuong INT
+AS
+BEGIN
+	DECLARE @dem INT;
+	SELECT @dem = COUNT(*) FROM  dbo.PHIEUNHAP
+	DECLARE @MaPhieuNhap CHAR(10) = 'PN00' + CONVERT(CHAR(10),@dem)
+
+	INSERT INTO dbo.CHITIETPHIEUNHAP ( MaPhieuNhap, MaSach, DonGia, SoLuong )
+	VALUES
+	     ( @MaPhieuNhap, @MaSach, @DonGia, @SoLuong )
+END
+GO

@@ -9,6 +9,7 @@ import DAL.DataProvider;
 import DTO.ChiTietPhieuNhap;
 import DTO.DateBox;
 import DTO.PhieuNhap;
+import DTO.Sach;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -110,5 +111,18 @@ public class BPhieuNhap {
         
     }
 
-    
+    public boolean ThemPhieuNhap(PhieuNhap phieuNhap, ArrayList<Sach> sachs) throws SQLException{
+        boolean result = false;
+        String sql_PhieuNhap = "SET DATEFORMAT DMY EXEC dbo.P_ThemPhieuNhap @MaNhanVien = ?, @MaNhaCungCap = ?, @NgayNhap =?";
+        String sql_ChiTietPN = "EXEC dbo.P_ThemChiTietPhieuNhap @MaSach = ?, @DonGia = ?, @SoLuong = ?";
+        DataProvider.getInstance().Open();
+        result = DataProvider.getInstance().executeUpdatePrepareStatement(sql_PhieuNhap, new Object[]{phieuNhap.getTenNhanVien(), phieuNhap.getTenNhaCungCap(), DateBox.ConvertToString(phieuNhap.getNgayNhap())}) > 0;
+         if (result) {
+             for (int i = 0; i < sachs.size(); i++) {
+                 result = DataProvider.getInstance().executeUpdatePrepareStatement(sql_ChiTietPN, new Object[]{sachs.get(i).getMaSach(), sachs.get(i).getGiaNhap(), sachs.get(i).getSoLuong()}) > 0;
+             }
+         }
+        DataProvider.getInstance().Close();
+        return result ;
+    }
 }

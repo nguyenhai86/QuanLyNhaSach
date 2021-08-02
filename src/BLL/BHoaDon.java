@@ -110,7 +110,7 @@ public class BHoaDon {
         DataProvider.getInstance().Close();
         return hoaDons;
     }
-     public boolean ThemHoaDon(HoaDon hoaDon, ArrayList<Sach> sachs) throws SQLException{
+    public boolean ThemHoaDon(HoaDon hoaDon, ArrayList<Sach> sachs) throws SQLException{
         boolean result = false;
         String sql_HoaDon = "SET DATEFORMAT DMY EXEC dbo.P_ThemHoaDon @MaNhanVien = ?, @MaKhachHang = ?, @NgayBan =?";
         String sql_ChiTietHD = "EXEC dbo.P_ThemChiTietHoaDon @MaSach = ?, @DonGia = ?, @SoLuong = ?";

@@ -57,6 +57,11 @@ public class F_ThemKhachHang extends javax.swing.JFrame {
         tf_KH_TenKH.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 
         tf_KH_DienThoai.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        tf_KH_DienThoai.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf_KH_DienThoaiKeyTyped(evt);
+            }
+        });
 
         jLabel29.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel29.setText("Điện thoại");
@@ -223,6 +228,13 @@ public class F_ThemKhachHang extends javax.swing.JFrame {
     private void cb_KH_NKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_KH_NKHActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cb_KH_NKHActionPerformed
+
+    private void tf_KH_DienThoaiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_KH_DienThoaiKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf_KH_DienThoaiKeyTyped
 
     /**
      * @param args the command line arguments
