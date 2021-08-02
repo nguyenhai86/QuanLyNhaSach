@@ -179,7 +179,7 @@ END
 GO
 -------------------------------------------------------------------------------------------------------------------------------------------
 
-ALTER PROC P_ThemHoaDon
+CREATE PROC P_ThemHoaDon
 	@MaNhanVien CHAR(10), @MaKhachHang CHAR(10), @NgayBan DATE
 AS
 BEGIN

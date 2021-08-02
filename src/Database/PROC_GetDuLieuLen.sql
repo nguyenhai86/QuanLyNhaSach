@@ -19,7 +19,7 @@ GO
 EXEC dbo.P_GetAllKhachHang
 GO
 
-ALTER PROC P_SeachKH
+CREATE PROC P_SeachKH
 	@MaKH CHAR(10), @TenKH NVARCHAR(40), @DienThoai CHAR(10)
 AS
 BEGIN
@@ -166,7 +166,7 @@ END;
 GO
 
 --==================================================================================================================================================
-ALTER PROC P_GetKhachHangBySDT
+CREATE PROC P_GetKhachHangBySDT
 	@DienThoai CHAR(10)
 AS
 BEGIN
@@ -182,14 +182,14 @@ END;
 GO
 
 --==================================================================================================================================================
-ALTER PROC P_GetKhachHangByMa
+CREATE PROC P_GetKhachHangByMa
 	@MaKH CHAR(10)
 AS
 BEGIN
     SELECT dbo.KHACHHANG.MaKhachHang, TenKhachHang, TenNhom, DienThoai, TruyVanCon.TongTien , CONVERT(CHAR(10),TruyVanCon.LanCuoiMuaHang,103) AS LanCuoiMuaHang, TinhTrang
     FROM dbo.KHACHHANG
         JOIN dbo.NHOMKHACHHANG ON NHOMKHACHHANG.MaNhomKhachHang = KHACHHANG.MaNhomKhachHang
-        JOIN
+        LEFT JOIN
            (   SELECT MaKhachHang, MAX(NgayBan) AS 'LanCuoiMuaHang', SUM(TongTien) AS 'TongTien'
                FROM dbo.HOADON
                GROUP BY MaKhachHang ) TruyVanCon ON TruyVanCon.MaKhachHang = KHACHHANG.MaKhachHang

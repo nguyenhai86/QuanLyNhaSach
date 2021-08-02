@@ -175,50 +175,47 @@ VALUES
 
 INSERT INTO SACH ( MaSach, TenSach, TacGia,GiaNhap,GiaBan, SoLuong, MaNhomSach )
 VALUES
-    ( 'S001', 'The Six Swans', 'Wilhelm Carl Grimm',50000,20000, 0, 'NS001' ),
-    ( 'S002', 'The French Revolution', 'William Doyle',50000,20000, 0, 'NS004' ),
-    ( 'S003', 'The Twelve Dancing Princesses', 'Jacob Ludwig Carl Grimm',50000,20000, 0, 'NS001' ),
+    ( 'S001', 'The Six Swans', 'Wilhelm Carl Grimm',70000,80000, 0, 'NS001' ),
+    ( 'S002', 'The French Revolution', 'William Doyle',60000,90000, 0, 'NS004' ),
+    ( 'S003', 'The Twelve Dancing Princesses', 'Jacob Ludwig Carl Grimm',100000,120000, 0, 'NS001' ),
     ( 'S004', 'Villette', 'Charlotte Bronte',50000,20000, 0, 'NS002' ),
     ( 'S005', 'The Immortal Life of Henrietta Lacks', 'Rebecca Skloot',50000,20000, 0, 'NS003' ),
     ( 'S006', 'Marie Antoinette: The Journey', 'Antonia Fraser',50000,20000, 0, 'NS002' );
 
 
-INSERT INTO NHACUNGCAP(MaNCC,TenNCC,DienThoai,TongTien)
+INSERT INTO NHACUNGCAP(MaNCC,TenNCC,DienThoai)
 VALUES
-    ( 'NCC001', N'Nhà Xuất Bản Kim Đồng', '0345864712', 0 ),
-    ( 'NCC002', N'Nhà Xuất Bản Thiếu Nhi', '0247568211', 0 ),
-    ( 'NCC003', N'Nhà Xuất Bản Thanh Niên', '0151481586', 0 );
+    ( 'NCC001', N'Nhà Xuất Bản Kim Đồng', '0345864712'),
+    ( 'NCC002', N'Nhà Xuất Bản Thiếu Nhi', '0247568211'),
+    ( 'NCC003', N'Nhà Xuất Bản Thanh Niên', '0151481586');
 
-INSERT INTO PHIEUNHAP(MaPhieuNhap,MaNhanVien,NgayNhap,MaNCC,TongTien)
+INSERT INTO PHIEUNHAP(MaPhieuNhap,MaNhanVien,NgayNhap,MaNCC)
 VALUES
-    ( 'PN001', 'NV003', '21/02/2020', 'NCC002', 0 ),
-    ( 'PN002', 'NV001', '23/02/2020', 'NCC003', 0 ),
-    ( 'PN003', 'NV002', '25/02/2020', 'NCC001', 0 );
+    ( 'PN001', 'NV003', '21/02/2020', 'NCC002'),
+    ( 'PN002', 'NV001', '23/02/2020', 'NCC003'),
+    ( 'PN003', 'NV002', '25/02/2020', 'NCC001');
+GO
 
-INSERT INTO CHITIETPHIEUNHAP(MaPhieuNhap,MaSach,DonGia,SoLuong)
-VALUES
-    ( 'PN001', 'S006',50000,0 ),
-    ( 'PN001', 'S001',50000,0 ),
-    ( 'PN002', 'S004',50000,0 ),
-    ( 'PN002', 'S002',50000,0 ),
-    ( 'PN003', 'S003',50000,0 ),
-    ( 'PN003', 'S005',50000,0 );
-
-INSERT INTO HOADON(MaHoaDon,MaNhanVien,MaKhachHang,NgayBan,TongTien)
-VALUES
-    ( 'HD001', 'NV001', 'KH003', '21/02/2021', 0 ),
-    ( 'HD002', 'NV003', 'KH001', '23/02/2021', 0 ),
-    ( 'HD003', 'NV002', 'KH005', '25/02/2021', 0 );
+INSERT INTO CHITIETPHIEUNHAP(MaPhieuNhap,MaSach,DonGia,SoLuong) VALUES    ( 'PN001', 'S006',50000,2 )
+INSERT INTO CHITIETPHIEUNHAP(MaPhieuNhap,MaSach,DonGia,SoLuong) VALUES    ( 'PN001', 'S001',70000,3 )
+INSERT INTO CHITIETPHIEUNHAP(MaPhieuNhap,MaSach,DonGia,SoLuong) VALUES    ( 'PN002', 'S004',50000,4 )
+INSERT INTO CHITIETPHIEUNHAP(MaPhieuNhap,MaSach,DonGia,SoLuong) VALUES    ( 'PN002', 'S002',60000,5 )
+INSERT INTO CHITIETPHIEUNHAP(MaPhieuNhap,MaSach,DonGia,SoLuong) VALUES    ( 'PN003', 'S005',100000,2 )
 
 
-INSERT INTO CHITIETHOADON(MaHoaDon,MaSach,DonGia, SoLuong)
+INSERT INTO HOADON(MaHoaDon,MaNhanVien,MaKhachHang,NgayBan)
 VALUES
-    ( 'HD001', 'S006',20000, 0),
-    ( 'HD001', 'S001',20000, 0),
-    ( 'HD002', 'S002',20000, 0),
-    ( 'HD002', 'S005',20000, 0),
-    ( 'HD003', 'S003',20000, 0),
-    ( 'HD003', 'S004',20000, 0);
+    ( 'HD001', 'NV001', 'KH003', '21/02/2021' ),
+    ( 'HD002', 'NV003', 'KH001', '23/02/2021' ),
+    ( 'HD003', 'NV002', 'KH005', '25/02/2021' );
+GO
+
+INSERT INTO CHITIETHOADON(MaHoaDon,MaSach,DonGia, SoLuong) VALUES    ( 'HD001', 'S006',20000, 1)
+INSERT INTO CHITIETHOADON(MaHoaDon,MaSach,DonGia, SoLuong) VALUES    ( 'HD001', 'S001',80000, 2)
+INSERT INTO CHITIETHOADON(MaHoaDon,MaSach,DonGia, SoLuong) VALUES    ( 'HD002', 'S002',90000, 2)
+INSERT INTO CHITIETHOADON(MaHoaDon,MaSach,DonGia, SoLuong) VALUES    ( 'HD002', 'S005',20000, 1)
+INSERT INTO CHITIETHOADON(MaHoaDon,MaSach,DonGia, SoLuong) VALUES    ( 'HD003', 'S003',120000, 2)
+INSERT INTO CHITIETHOADON(MaHoaDon,MaSach,DonGia, SoLuong) VALUES	 ( 'HD003', 'S004',20000, 3)
 
 GO
 

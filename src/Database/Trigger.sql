@@ -55,4 +55,7 @@ AS
 
 	UPDATE dbo.PhieuNhap SET TongTien = (SELECT SUM(DonGia*SoLuong) FROM dbo.CHITIETPHIEUNHAP WHERE MaPhieuNhap = (SELECT Inserted.MaPhieuNhap FROM Inserted))
 	WHERE PHIEUNHAP.MaPhieuNhap = (SELECT Inserted.MaPhieuNhap FROM Inserted)
+
+	UPDATE dbo.NHACUNGCAP SET TongTien = ( SELECT SUM(TongTien) FROM dbo.PHIEUNHAP WHERE MaNCC = ( SELECT dbo.PHIEUNHAP.MaNCC FROM Inserted JOIN dbo.PHIEUNHAP ON PHIEUNHAP.MaPhieuNhap = Inserted.MaPhieuNhap ) )
+	WHERE NHACUNGCAP.MaNCC = ( SELECT dbo.PHIEUNHAP.MaNCC FROM Inserted JOIN dbo.PHIEUNHAP ON PHIEUNHAP.MaPhieuNhap = Inserted.MaPhieuNhap )
 GO
