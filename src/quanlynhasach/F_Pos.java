@@ -14,6 +14,8 @@ import DTO.KhachHang;
 import DTO.Sach;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.awt.print.PrinterException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -22,11 +24,15 @@ import java.util.Hashtable;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
@@ -163,7 +169,7 @@ public class F_Pos extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         tf_TenKhachHang = new javax.swing.JTextField();
         lb_KH_ThongBao = new javax.swing.JLabel();
-        btn_ThanhToan1 = new javax.swing.JToggleButton();
+        btn_TaoMoi = new javax.swing.JToggleButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tf_Bill = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
@@ -399,12 +405,12 @@ public class F_Pos extends javax.swing.JFrame {
         lb_KH_ThongBao.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lb_KH_ThongBao.setForeground(new java.awt.Color(255, 51, 51));
 
-        btn_ThanhToan1.setBackground(new java.awt.Color(34, 177, 239));
-        btn_ThanhToan1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btn_ThanhToan1.setText("TẠO MỚI");
-        btn_ThanhToan1.addActionListener(new java.awt.event.ActionListener() {
+        btn_TaoMoi.setBackground(new java.awt.Color(34, 177, 239));
+        btn_TaoMoi.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btn_TaoMoi.setText("TẠO MỚI");
+        btn_TaoMoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ThanhToan1ActionPerformed(evt);
+                btn_TaoMoiActionPerformed(evt);
             }
         });
 
@@ -461,7 +467,7 @@ public class F_Pos extends javax.swing.JFrame {
                     .addComponent(lb_TienHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btn_ThanhToan1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_TaoMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btn_ThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -502,7 +508,7 @@ public class F_Pos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_ThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_ThanhToan1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_TaoMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -934,9 +940,9 @@ public class F_Pos extends javax.swing.JFrame {
        
     }//GEN-LAST:event_tableViewFocusGained
 
-    private void btn_ThanhToan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThanhToan1ActionPerformed
+    private void btn_TaoMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TaoMoiActionPerformed
        Reset();
-    }//GEN-LAST:event_btn_ThanhToan1ActionPerformed
+    }//GEN-LAST:event_btn_TaoMoiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -983,8 +989,8 @@ public class F_Pos extends javax.swing.JFrame {
     private KhachHang khachHang = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Scan;
+    private javax.swing.JToggleButton btn_TaoMoi;
     private javax.swing.JToggleButton btn_ThanhToan;
-    private javax.swing.JToggleButton btn_ThanhToan1;
     private javax.swing.JButton btn_ThemKH;
     private javax.swing.JButton btn_TimKiem;
     private com.toedter.calendar.JDateChooser date_NgayBan;

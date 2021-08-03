@@ -14,6 +14,8 @@ import DTO.NhanVien;
 import DTO.TaiKhoan;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 import java.sql.SQLException;
@@ -21,8 +23,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.KeyStroke;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -39,6 +45,7 @@ public class F_NhanVien extends javax.swing.JFrame {
         initComponents();
         Table_NhanVien_Component();
         Table_TaiKhoan_Component();
+        
     }
     
     public void Table_TaiKhoan_Component(){

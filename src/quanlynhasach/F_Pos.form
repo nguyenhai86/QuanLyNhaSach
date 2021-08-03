@@ -270,7 +270,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="btn_ThanhToan1" min="-2" pref="166" max="-2" attributes="0"/>
+                      <Component id="btn_TaoMoi" min="-2" pref="166" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="btn_ThanhToan" min="-2" pref="210" max="-2" attributes="0"/>
                   </Group>
@@ -319,7 +319,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btn_ThanhToan" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="btn_ThanhToan1" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="btn_TaoMoi" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -523,7 +523,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btn_ThanhToan1">
+            <Component class="javax.swing.JToggleButton" name="btn_TaoMoi">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ef" green="b1" red="22" type="rgb"/>
@@ -534,7 +534,7 @@
                 <Property name="text" type="java.lang.String" value="T&#x1ea0;O M&#x1eda;I"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ThanhToan1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_TaoMoiActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">

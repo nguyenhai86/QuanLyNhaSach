@@ -107,6 +107,7 @@ public class F_NhapSach extends javax.swing.JFrame {
         lb_ThemSach_ThongBao.setText(null);
         nhaCungCap = null;
         lb_TienHang.setText("0");
+        //tf_Bill.setText(null);
         DefaultTableModel mode = (DefaultTableModel) tableView.getModel();
         mode.setRowCount(0);
     }
@@ -144,6 +145,7 @@ public class F_NhapSach extends javax.swing.JFrame {
         lb_TienHang = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tf_Bill = new javax.swing.JTextArea();
+        btn_ThanhToan1 = new javax.swing.JToggleButton();
         jLabel8 = new javax.swing.JLabel();
         tf_MaHangHoa = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -369,6 +371,15 @@ public class F_NhapSach extends javax.swing.JFrame {
         tf_Bill.setRows(5);
         jScrollPane3.setViewportView(tf_Bill);
 
+        btn_ThanhToan1.setBackground(new java.awt.Color(34, 177, 239));
+        btn_ThanhToan1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btn_ThanhToan1.setText("TẠO MOI");
+        btn_ThanhToan1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ThanhToan1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -393,6 +404,8 @@ public class F_NhapSach extends javax.swing.JFrame {
                                 .addComponent(lb_TienHang, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btn_ThanhToan1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(btn_ThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -421,7 +434,9 @@ public class F_NhapSach extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lb_TienHang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btn_ThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_ThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_ThanhToan1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54))
@@ -745,6 +760,11 @@ public class F_NhapSach extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, thongBao);
     }//GEN-LAST:event_btn_ThanhToanActionPerformed
 
+    private void btn_ThanhToan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThanhToan1ActionPerformed
+        // TODO add your handling code here:
+        Reset();
+    }//GEN-LAST:event_btn_ThanhToan1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -785,6 +805,7 @@ public class F_NhapSach extends javax.swing.JFrame {
     private NhaCungCap nhaCungCap = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btn_ThanhToan;
+    private javax.swing.JToggleButton btn_ThanhToan1;
     private javax.swing.JComboBox<String> cb_TenNCC;
     private com.toedter.calendar.JDateChooser date_NgayNhap;
     private javax.swing.JButton jButton1;
