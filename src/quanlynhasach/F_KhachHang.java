@@ -1525,7 +1525,7 @@ public class F_KhachHang extends javax.swing.JFrame {
             }
             else{
                 NhaCungCap nhaCungCap = BNhaCungCap.getInstance().getNhaCungCapByTenNCC(tf_NCC_TenNCC.getText().trim());
-                if (nhaCungCap != null&& !nhaCungCap.getMaNhaCC().equals((String)mode.getValueAt(index, 0))) {
+                if (nhaCungCap != null && !nhaCungCap.getMaNhaCC().equals((String)mode.getValueAt(index, 0))) {
                     thongBao = thongBao + "\nTên nhà cung cấp da ton tai";
                     flag = false;
                 }

@@ -677,6 +677,9 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cb_TaiChinhActionPerformed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -827,7 +830,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Times New Roman" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="H&#x1ebf;t s&#xe1;ch"/>
+                    <Property name="text" type="java.lang.String" value="&#x110;&#x1ea7;u s&#xe1;ch h&#x1ebf;t h&#xe0;ng"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lb_TTK_HetHang">

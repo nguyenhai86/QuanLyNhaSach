@@ -13,6 +13,7 @@ import BLL.BNhomSach;
 import BLL.BPhieuNhap;
 import BLL.BSach;
 import BLL.BPhieuNhap;
+import BLL.BQuanLy;
 import DAL.DataProvider;
 import DTO.ChiTietHoaDon;
 import DTO.HoaDon;
@@ -31,6 +32,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -65,6 +67,8 @@ public class F_QuanLy extends javax.swing.JFrame {
         
         Table_PhieuNhap_Component();
         Table_Header_Component(tb_CTPN);
+        
+        Table_QuanLy_Component();
     }
     
     public void Table_HoaDon_Component(){
@@ -94,6 +98,18 @@ public class F_QuanLy extends javax.swing.JFrame {
     public void Table_NhomSach_Component(){
         Table_Header_Component(tb_NhomSach);
         LoadNhomSach();
+    }
+    public void Table_QuanLy_Component(){
+        try{
+            lb_DoanhSo.setText(String.valueOf(BQuanLy.getInstance().TinhDoanhThu()));
+            lb_LaiGop.setText(String.valueOf(BQuanLy.getInstance().TinhLai()));
+            lb_SoDonHang.setText(String.valueOf(BHoaDon.getInstance().TinhSoDonHang()));
+            lb_DHTB.setText(String.valueOf(Math.round(BQuanLy.getInstance().TinhDoanhThu() / BHoaDon.getInstance().TinhSoDonHang())));
+            lb_TTK_HangCon.setText(String.valueOf(BSach.getInstance().TinhSoSachTon()));
+            lb_TTK_HetHang.setText(String.valueOf(BSach.getInstance().TinhSachHetHang()));
+        }catch(Exception e){
+            
+        }
     }
     public void Table_Header_Component(JTable table){
         table.getTableHeader().setFont(new Font("Times New Roman", Font.BOLD,15));
@@ -611,6 +627,11 @@ public class F_QuanLy extends javax.swing.JFrame {
 
         cb_TaiChinh.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cb_TaiChinh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hôm nay", "Hôm qua", "7 ngày gần đây", "30 ngày gần đây", "Tháng này", "Tháng trước" }));
+        cb_TaiChinh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_TaiChinhActionPerformed(evt);
+            }
+        });
 
         jLabel47.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel47.setText("Tiền thu bán sách:");
@@ -698,7 +719,7 @@ public class F_QuanLy extends javax.swing.JFrame {
         jLabel53.setText("Sách còn trong kho");
 
         jLabel55.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel55.setText("Hết sách");
+        jLabel55.setText("Đầu sách hết hàng");
 
         lb_TTK_HetHang.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lb_TTK_HetHang.setText("0");
@@ -2102,6 +2123,47 @@ public class F_QuanLy extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_tf_GiaBanKeyTyped
+
+    private void cb_TaiChinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_TaiChinhActionPerformed
+        double tienThuBanSach = 0;
+        try {
+            if (cb_TaiChinh.getSelectedIndex()==0) {  
+                    tienThuBanSach = BQuanLy.getInstance().TinhDoanhThu(new Date(), new Date()); 
+            }
+            else if (cb_TaiChinh.getSelectedIndex()==1) { //Hom qua
+                Calendar cal = Calendar.getInstance();
+                cal.add(Calendar.DAY_OF_MONTH, -1);
+                tienThuBanSach = BQuanLy.getInstance().TinhDoanhThu(cal.getTime(),cal.getTime()); 
+            }
+            else if (cb_TaiChinh.getSelectedIndex()==2) { //7 ngay gan day
+                Calendar cal = Calendar.getInstance();
+                cal.add(Calendar.DAY_OF_MONTH, -7);
+                tienThuBanSach = BQuanLy.getInstance().TinhDoanhThu(cal.getTime(),new Date()); 
+            }
+            else if (cb_TaiChinh.getSelectedIndex()==3) { //30 ngay gan day
+                Calendar cal = Calendar.getInstance();
+                cal.add(Calendar.DAY_OF_MONTH, -30);
+                tienThuBanSach = BQuanLy.getInstance().TinhDoanhThu(cal.getTime(),new Date()); 
+            }
+            else if (cb_TaiChinh.getSelectedIndex()==4) { // Thang nay
+                Calendar cal = Calendar.getInstance();
+                cal.set(Calendar.DAY_OF_MONTH, 1);
+                tienThuBanSach = BQuanLy.getInstance().TinhDoanhThu(cal.getTime(),new Date()); 
+            }
+            else if (cb_TaiChinh.getSelectedIndex()==5) { // Thang truoc
+                Calendar cal = Calendar.getInstance();
+                cal.set(Calendar.DAY_OF_MONTH, 1);
+                cal.add(Calendar.DAY_OF_MONTH, -1);
+                Date ngayCuoiThang = cal.getTime();
+                cal.set(Calendar.DAY_OF_MONTH, 1);
+                Date ngayDauThang = cal.getTime();
+                tienThuBanSach = BQuanLy.getInstance().TinhDoanhThu(ngayDauThang,ngayCuoiThang); 
+            }
+        } catch (SQLException ex) {
+                Logger.getLogger(F_QuanLy.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        lb_TC_TienThu.setText(String.valueOf(tienThuBanSach));
+    }//GEN-LAST:event_cb_TaiChinhActionPerformed
 
     /**
      * @param args the command line arguments

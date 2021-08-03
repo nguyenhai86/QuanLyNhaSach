@@ -124,4 +124,26 @@ public class BHoaDon {
         DataProvider.getInstance().Close();
         return result ;
     }
+    public String getMaHoaDonMoiNhat() throws SQLException{
+        String maHoaDon = null;
+        String sql = "SELECT  dbo.F_MaHoaDonMoiNhat() AS 'MaHoaDon'";
+        DataProvider.getInstance().Open();
+        ResultSet rs = DataProvider.getInstance().executeQuery(sql);
+        while(rs.next()){
+            maHoaDon = rs.getString("MaHoaDon");
+        }
+        DataProvider.getInstance().Close();
+        return maHoaDon;
+    }
+    public double TinhSoDonHang() throws SQLException{
+        double result = 0;
+        String sql = "SELECT dbo.F_SoDonHang() AS 'SoDon'";
+        DataProvider.getInstance().Open();
+        ResultSet rs = DataProvider.getInstance().executeQuery(sql);
+        while(rs.next()){
+            result = rs.getDouble("SoDon");
+        }
+        DataProvider.getInstance().Close();
+        return result ;
+    }
 }

@@ -10,8 +10,18 @@ package quanlynhasach;
  * @author NguyenHai
  */
 public class Test {
+    public static String CatTen(String value){
+        if (value.length() > 21) {
+            value = value.substring(0, 21);
+            value = value + "...";
+        }
+        else{
+            for (int i = value.length(); i <= 21; i++)
+                value = value + " ";
+        }
+        return value;
+    }
     public static void main(String[] args) {
-        String ds = null;
-        System.out.println(ds.getClass().getSimpleName());
+        System.out.println(CatTen("Villette"));
     }
 }

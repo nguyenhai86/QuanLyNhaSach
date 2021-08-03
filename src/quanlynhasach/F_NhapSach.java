@@ -8,6 +8,7 @@ package quanlynhasach;
 import BLL.BNhaCungCap;
 import BLL.BPhieuNhap;
 import BLL.BSach;
+import DTO.DateBox;
 import DTO.NhaCungCap;
 import DTO.PhieuNhap;
 import DTO.Sach;
@@ -104,6 +105,7 @@ public class F_NhapSach extends javax.swing.JFrame {
         date_NgayNhap.setDate(new Date());
         cb_TenNCC.setSelectedItem(null);
         lb_ThemSach_ThongBao.setText(null);
+        nhaCungCap = null;
         lb_TienHang.setText("0");
         DefaultTableModel mode = (DefaultTableModel) tableView.getModel();
         mode.setRowCount(0);
@@ -140,6 +142,8 @@ public class F_NhapSach extends javax.swing.JFrame {
         tf_TenNV = new javax.swing.JTextField();
         cb_TenNCC = new javax.swing.JComboBox<>();
         lb_TienHang = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tf_Bill = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
         tf_MaHangHoa = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -359,6 +363,12 @@ public class F_NhapSach extends javax.swing.JFrame {
             }
         });
 
+        tf_Bill.setEditable(false);
+        tf_Bill.setColumns(20);
+        tf_Bill.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        tf_Bill.setRows(5);
+        jScrollPane3.setViewportView(tf_Bill);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -367,9 +377,6 @@ public class F_NhapSach extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(cb_TenNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -387,7 +394,12 @@ public class F_NhapSach extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(btn_ThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cb_TenNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,13 +416,15 @@ public class F_NhapSach extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cb_TenNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lb_TienHang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btn_ThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(178, 178, 178))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
         );
 
         lb_TienHang.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -556,10 +570,17 @@ public class F_NhapSach extends javax.swing.JFrame {
         try{
             if (cb_TenNCC.getSelectedItem() == null)
                 nhaCungCap = null;
-            else
-                nhaCungCap = BNhaCungCap.getInstance().getNhaCungCapByTenNCC((String) cb_TenNCC.getSelectedItem());
+            else{
+                    nhaCungCap = BNhaCungCap.getInstance().getNhaCungCapByTenNCC((String) cb_TenNCC.getSelectedItem());
+                    if (!nhaCungCap.getTinhTrang()) {
+                        JOptionPane.showMessageDialog(this, "Nhà cung cấp bị ngừng cung cấp");
+                        nhaCungCap = null;
+                        cb_TenNCC.setSelectedItem(null);
+                }
+            }
         }catch(Exception e){
             nhaCungCap = null;
+            cb_TenNCC.setSelectedItem(null);
             JOptionPane.showMessageDialog(this, "ERROR: " +e.getMessage());
         }
     }//GEN-LAST:event_cb_TenNCCActionPerformed
@@ -646,7 +667,46 @@ public class F_NhapSach extends javax.swing.JFrame {
         }
         lb_TienHang.setText(String.valueOf(TinhTongTien()));
     }//GEN-LAST:event_tableViewPropertyChange
-
+    public static String CatTen(String value){
+        if (value.length() > 21) {
+            value = value.substring(0, 21);
+            value = value + "...";
+        }
+        else{
+            for (int i = value.length(); i <= 21; i++)
+                value = value + " ";
+        }
+        return value;
+    }
+    public void PrintBill(){
+        try {
+            tf_Bill.setText(null);
+            tf_Bill.setText("\n********************************************************************");
+            tf_Bill.setText(tf_Bill.getText() + "\n                                           CỬA HÀNG NHÀ SÁCH AN NHIÊN                               ");
+            tf_Bill.setText(tf_Bill.getText() + "\n                                                HÓA ĐƠN NHẬP HÀNG                                   ");
+            tf_Bill.setText(tf_Bill.getText() + "\n********************************************************************");
+            tf_Bill.setText(tf_Bill.getText() + "\nMã phiếu nhập: " + BPhieuNhap.getInstance().getMaPhieuNhapMoiNhat());
+            tf_Bill.setText(tf_Bill.getText() + "\t\t\tNgày nhập: " + DateBox.ConvertToString(date_NgayNhap.getDate()));
+            tf_Bill.setText(tf_Bill.getText() + "\nTên nhân viên: " + tf_TenNV.getText());
+            tf_Bill.setText(tf_Bill.getText() + "\nNhà cung cấp: " + nhaCungCap.getTenNhaCC());
+            tf_Bill.setText(tf_Bill.getText() + "\n--------------------------------------------------------------------------------------------");
+            tf_Bill.setText(tf_Bill.getText() + "\nMã sách\tTên sách\t\tSố lượng\tĐơn giá\tThành tiền");
+            tf_Bill.setText(tf_Bill.getText() + "\n--------------------------------------------------------------------------------------------");
+            ArrayList<Sach> sach = TableToArray();
+            for (int i = 0; i < sach.size(); i++) {
+                tf_Bill.setText(tf_Bill.getText() + "\n" + sach.get(i).getMaSach() + "\t" + CatTen(sach.get(i).getTenSach()) + "\t" + sach.get(i).getSoLuong() + "\t" + sach.get(i).getGiaNhap() + "\t" + sach.get(i).getGiaNhap()*sach.get(i).getSoLuong());
+                if (i < sach.size() -1)
+                    tf_Bill.setText(tf_Bill.getText() + "\n-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -");
+            }                                       
+            tf_Bill.setText(tf_Bill.getText() + "\n--------------------------------------------------------------------------------------------");
+            tf_Bill.setText(tf_Bill.getText() + "\n"+"\t"+"\t"+"\t"+"\t"+"Tổng tiền: " +"\t"+ lb_TienHang.getText());
+            tf_Bill.setText(tf_Bill.getText() + "\n\tCảm ơn và Hẹn gặp lại!");
+            
+            //tf_Bill.print();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this,"ERROR: " +  e.getMessage());
+        }
+    }
     private void btn_ThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThanhToanActionPerformed
         String thongBao = "";
         boolean flag = true;
@@ -661,6 +721,10 @@ public class F_NhapSach extends javax.swing.JFrame {
                 thongBao = thongBao + "\nNhà cung cấp không được để trống";
                 flag = false;
             }
+            else if (!nhaCungCap.getTinhTrang()) {
+                thongBao = thongBao + "\nNhà cung cấp đã bị ngừng cung cấp";
+                flag = false;
+            }
             
             if (flag) {
                     PhieuNhap phieuNhap = new PhieuNhap();
@@ -669,6 +733,7 @@ public class F_NhapSach extends javax.swing.JFrame {
                     phieuNhap.setNgayNhap(date_NgayNhap.getDate());
                     if (BPhieuNhap.getInstance().ThemPhieuNhap(phieuNhap, sachs)) {
                         thongBao = "Thanh toán thành công";
+                        PrintBill();
                         Reset();
                     } else {
                         thongBao = "Thanh toán không thành công";
@@ -677,8 +742,6 @@ public class F_NhapSach extends javax.swing.JFrame {
         }catch (SQLException e) {
             thongBao = "ERROR: " + e.getMessage();
         }
-        nhaCungCap = null;
-        cb_TenNCC.setSelectedItem(null);
         JOptionPane.showMessageDialog(this, thongBao);
     }//GEN-LAST:event_btn_ThanhToanActionPerformed
 
@@ -740,6 +803,7 @@ public class F_NhapSach extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField9;
@@ -747,6 +811,7 @@ public class F_NhapSach extends javax.swing.JFrame {
     private javax.swing.JLabel lb_ThemSach_ThongBao;
     private javax.swing.JLabel lb_TienHang;
     private javax.swing.JTable tableView;
+    private javax.swing.JTextArea tf_Bill;
     private javax.swing.JTextField tf_MaHangHoa;
     private javax.swing.JTextField tf_TenNV;
     // End of variables declaration//GEN-END:variables

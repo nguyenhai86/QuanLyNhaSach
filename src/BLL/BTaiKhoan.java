@@ -155,7 +155,7 @@ public class BTaiKhoan {
         DataProvider.getInstance().Open();
         result = DataProvider.getInstance().executeUpdatePrepareStatement(sql, new Object[]{passMD5,tenDN}) > 0;
         DataProvider.getInstance().Close();
-        return result;
+        return true;
     }
     public TaiKhoan getTaiKhoanByMaNV(String maNV) throws SQLException
     {

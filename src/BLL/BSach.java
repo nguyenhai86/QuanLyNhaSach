@@ -123,4 +123,26 @@ public class BSach {
         DataProvider.getInstance().Close();
         return result ;
     }
+    public int TinhSachHetHang() throws SQLException{
+        int result = 0;
+        String sql = "SELECT COUNT(*) AS SoLuong FROM SACH WHERE SoLuong = 0 AND TinhTrang = 1";
+        DataProvider.getInstance().Open();
+        ResultSet rs = DataProvider.getInstance().executeQuery(sql);
+        while(rs.next()){
+            result = rs.getInt("SoLuong");
+        }
+        DataProvider.getInstance().Close();
+        return result ;
+    }
+    public int TinhSoSachTon() throws SQLException{
+        int result = 0;
+        String sql = "SELECT SUM(SoLuong) AS SoLuong FROM SACH WHERE TinhTrang = 1";
+        DataProvider.getInstance().Open();
+        ResultSet rs = DataProvider.getInstance().executeQuery(sql);
+        while(rs.next()){
+            result = rs.getInt("SoLuong");
+        }
+        DataProvider.getInstance().Close();
+        return result ;
+    }
 }

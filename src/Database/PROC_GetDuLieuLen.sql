@@ -210,3 +210,95 @@ BEGIN
 END;
 GO
 
+--==================================================================================================================================================
+ALTER PROC P_XuatHoaDon
+	@MaHoaDon CHAR(10)
+AS
+BEGIN
+	SELECT HOADON.MaHoaDon,TenKhachHang,TenNhanVien,CONVERT(CHAR(10),NgayBan,103) AS NgayBan,HOADON.TongTien,dbo.SACH.MaSach,TenSach,DonGia,CHITIETHOADON.SoLuong, DonGia*CHITIETHOADON.SoLuong  AS ThanhTien FROM dbo.HOADON
+	JOIN dbo.KHACHHANG ON KHACHHANG.MaKhachHang = HOADON.MaKhachHang
+	JOIN dbo.NHANVIEN ON NHANVIEN.MaNhanVien = HOADON.MaNhanVien
+	JOIN dbo.CHITIETHOADON ON CHITIETHOADON.MaHoaDon = HOADON.MaHoaDon
+	JOIN dbo.SACH ON SACH.MaSach = CHITIETHOADON.MaSach
+	WHERE HOADON.MaHoaDon = @MaHoaDon
+END
+GO
+
+EXEC P_XuatHoaDon	@MaHoaDon = 'HD001'
+GO
+--==================================================================================================================================================
+CREATE FUNCTION F_MaPhieuNhapMoiNhat()
+RETURNS CHAR(10)
+AS
+BEGIN
+	DECLARE @dem INT;
+	SELECT @dem = COUNT(*) FROM  dbo.PHIEUNHAP
+	DECLARE @MaPhieuNhap CHAR(10) = 'PN00' + CONVERT(CHAR(10),@dem)
+	RETURN @MaPhieuNhap
+END
+GO
+
+
+CREATE FUNCTION F_MaHoaDonMoiNhat()
+RETURNS CHAR(10)
+AS
+BEGIN
+	DECLARE @dem INT;
+	SELECT @dem = COUNT(*) FROM  dbo.HoaDon
+	DECLARE @MaHoaDon CHAR(10) = 'HD00' + CONVERT(CHAR(10),@dem)
+	RETURN @MaHoaDon
+END
+GO
+--==================================================================================================================================================
+CREATE FUNCTION F_TinhDoanhSo()
+RETURNS MONEY
+AS
+BEGIN
+	DECLARE @TongTien MONEY = 0
+	SELECT @TongTien = SUM(TongTien) FROM dbo.HOADON
+	RETURN @TongTien
+END
+GO
+
+
+CREATE FUNCTION F_TinhLai()
+RETURNS MONEY
+AS
+BEGIN
+	DECLARE @DoanhThu MONEY = 0
+	SELECT @DoanhThu = SUM(TongTien) FROM dbo.HOADON
+	DECLARE @TongTien MONEY = 0
+	SELECT @TongTien = SUM(TongTien) FROM dbo.PHIEUNHAP
+
+	RETURN @DoanhThu - @TongTien
+END
+GO
+
+CREATE FUNCTION F_SoDonHang()
+RETURNS INT
+AS
+BEGIN
+	DECLARE @Count INT = 0
+	SELECT @Count = COUNT(*) FROM dbo.HOADON
+	RETURN @Count
+END
+GO
+
+
+CREATE FUNCTION F_TinhDoanhThuTheo(@value int)
+RETURNS MONEY
+AS
+BEGIN
+	DECLARE @DoanhThu MONEY = 0
+	IF(@value = 0) -- Hom nay
+		SELECT @DoanhThu = TongTien FROM dbo.HOADON WHERE NgayBan = GETDATE()
+	ELSE IF(@value == 1) -- Hom qua
+		SELECT @DoanhThu = TongTien FROM dbo.HOADON WHERE NgayBan = GETDATE()
+
+
+	RETURN @DoanhThu
+END
+GO
+
+PRINT CONVERT(CHAR(10),	DATEDIFF(GETDATE()),103)
+

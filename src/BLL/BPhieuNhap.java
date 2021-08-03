@@ -125,4 +125,15 @@ public class BPhieuNhap {
         DataProvider.getInstance().Close();
         return result ;
     }
+    public String getMaPhieuNhapMoiNhat() throws SQLException{
+        String maPhieuNhap = null;
+        String sql = "SELECT  dbo.F_MaPhieuNhapMoiNhat() AS 'MaPhieuNhap'";
+        DataProvider.getInstance().Open();
+        ResultSet rs = DataProvider.getInstance().executeQuery(sql);
+        while(rs.next()){
+            maPhieuNhap = rs.getString("MaPhieuNhap");
+        }
+        DataProvider.getInstance().Close();
+        return maPhieuNhap;
+    }
 }
