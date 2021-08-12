@@ -84,6 +84,7 @@ public class F_Scan extends javax.swing.JFrame implements Runnable, ThreadFactor
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        result_field.setEditable(false);
         result_field.setBorder(null);
         jPanel1.add(result_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 470, 20));
 

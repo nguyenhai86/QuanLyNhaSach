@@ -552,9 +552,6 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JLabel" name="lb_TempPos">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel6"/>
-              </Properties>
               <Events>
                 <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="lb_TempPosPropertyChange"/>
                 <EventHandler event="vetoableChange" listener="java.beans.VetoableChangeListener" parameters="java.beans.PropertyChangeEvent" handler="lb_TempPosVetoableChange"/>

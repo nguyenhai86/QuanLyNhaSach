@@ -420,7 +420,6 @@ public class F_Pos extends javax.swing.JFrame {
         tf_Bill.setRows(5);
         jScrollPane3.setViewportView(tf_Bill);
 
-        lb_TempPos.setText("jLabel6");
         lb_TempPos.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 lb_TempPosPropertyChange(evt);
@@ -872,7 +871,7 @@ public class F_Pos extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ThanhToanActionPerformed
 
     private void tableViewPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tableViewPropertyChange
-        lb_ThemSach_ThongBao.setText(null);
+
         int index =  tableView.getSelectedRow();
         DefaultTableModel mode = (DefaultTableModel) tableView.getModel();
         
@@ -946,7 +945,7 @@ public class F_Pos extends javax.swing.JFrame {
     }//GEN-LAST:event_lb_TempPosVetoableChange
 
     private void lb_TempPosPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_lb_TempPosPropertyChange
-        lb_ThemSach_ThongBao.setText(null);
+
         DefaultTableModel mode = (DefaultTableModel) tableView.getModel();
         String maSach = lb_TempPos.getText();
         if (maSach == null) 
