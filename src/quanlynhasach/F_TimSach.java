@@ -229,17 +229,11 @@ public class F_TimSach extends javax.swing.JFrame {
         int index = tb_Sach.getSelectedRow();
         DefaultTableModel mode = (DefaultTableModel) tb_Sach.getModel();
         maSach = (String) mode.getValueAt(index, 0);
-        BienToanCuc.getInstance().setFlag(true);
+        //BienToanCuc.getInstance().setFlag(true);
         
-//        DefaultTableModel mode2 = (DefaultTableModel) this.tb_Sach.getModel();
-//        mode2.addRow(new Object[]{"Á","áâ"});
-//        Vector data = mode2.getDataVector();
-//
-//        data.forEach((t) -> {
-//            Vector khachHang = (Vector) t;
-//            
-//            System.out.println((String)khachHang.get(0));
-//        });
+        if (maSach != null && maSach.length() != 0) {
+            F_Pos.lb_TempPosPosChangeValue(maSach);
+        }
     }//GEN-LAST:event_tb_SachMouseClicked
 
     private void btn_Sach_LocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Sach_LocActionPerformed
