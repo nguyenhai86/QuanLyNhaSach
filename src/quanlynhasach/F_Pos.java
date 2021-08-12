@@ -229,6 +229,15 @@ public class F_Pos extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableViewMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tableViewMouseEntered(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tableViewMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tableViewMouseReleased(evt);
+            }
         });
         tableView.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
@@ -526,6 +535,7 @@ public class F_Pos extends javax.swing.JFrame {
 
         lb_ThoiLai.setHorizontalAlignment(SwingConstants.RIGHT);
         lb_TienHang.setHorizontalAlignment(SwingConstants.RIGHT);
+        lb_TempPos.setVisible(false);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel8.setText("Mã Sách");
@@ -804,10 +814,9 @@ public class F_Pos extends javax.swing.JFrame {
 
     private void btn_TimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TimKiemActionPerformed
 
-        //while(!BienToanCuc.getInstance().getFlag()){}
-        BienToanCuc.getInstance().setFlag(false);
+        if (f_TimSach == null)
+            f_TimSach = new F_TimSach();
         
-        f_TimSach = new F_TimSach();
         f_TimSach.setVisible(true);
     }//GEN-LAST:event_btn_TimKiemActionPerformed
 
@@ -988,8 +997,19 @@ public class F_Pos extends javax.swing.JFrame {
 
     private void btn_ScanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ScanActionPerformed
         F_Scan.getInstance();
-        
     }//GEN-LAST:event_btn_ScanActionPerformed
+
+    private void tableViewMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableViewMousePressed
+        
+    }//GEN-LAST:event_tableViewMousePressed
+
+    private void tableViewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableViewMouseEntered
+
+    }//GEN-LAST:event_tableViewMouseEntered
+
+    private void tableViewMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableViewMouseReleased
+        System.out.println("10");
+    }//GEN-LAST:event_tableViewMouseReleased
     public static void lb_TempPosPosChangeValue(String value){
         lb_TempPos.setText(value);
     }

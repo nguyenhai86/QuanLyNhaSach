@@ -68,7 +68,7 @@ public class F_TimSach extends javax.swing.JFrame {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -229,10 +229,12 @@ public class F_TimSach extends javax.swing.JFrame {
         int index = tb_Sach.getSelectedRow();
         DefaultTableModel mode = (DefaultTableModel) tb_Sach.getModel();
         maSach = (String) mode.getValueAt(index, 0);
-        //BienToanCuc.getInstance().setFlag(true);
         
         if (maSach != null && maSach.length() != 0) {
-            F_Pos.lb_TempPosPosChangeValue(maSach);
+            if (BienToanCuc.getInstance().getF_Pos().isVisible())
+                F_Pos.lb_TempPosPosChangeValue(maSach);
+            else if (BienToanCuc.getInstance().getF_NhapSach().isVisible())
+                F_NhapSach.lb_TempNhapHangChangeValue(maSach);
         }
     }//GEN-LAST:event_tb_SachMouseClicked
 

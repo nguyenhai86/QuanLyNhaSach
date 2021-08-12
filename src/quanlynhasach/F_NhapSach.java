@@ -146,10 +146,11 @@ public class F_NhapSach extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tf_Bill = new javax.swing.JTextArea();
         btn_ThanhToan1 = new javax.swing.JToggleButton();
+        lb_TempNhapHang = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         tf_MaHangHoa = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_TimKiem = new javax.swing.JButton();
         lb_ThemSach_ThongBao = new javax.swing.JLabel();
 
         jLabel27.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -380,6 +381,17 @@ public class F_NhapSach extends javax.swing.JFrame {
             }
         });
 
+        lb_TempNhapHang.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                lb_TempNhapHangPropertyChange(evt);
+            }
+        });
+        lb_TempNhapHang.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
+            public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
+                lb_TempNhapHangVetoableChange(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -413,6 +425,11 @@ public class F_NhapSach extends javax.swing.JFrame {
                             .addComponent(cb_TenNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(288, 288, 288)
+                    .addComponent(lb_TempNhapHang)
+                    .addContainerGap(289, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -440,9 +457,15 @@ public class F_NhapSach extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(255, 255, 255)
+                    .addComponent(lb_TempNhapHang, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(236, Short.MAX_VALUE)))
         );
 
         lb_TienHang.setHorizontalAlignment(SwingConstants.RIGHT);
+        lb_TempNhapHang.setVisible(false);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel8.setText("Mã Sách");
@@ -478,12 +501,17 @@ public class F_NhapSach extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton1.setText("Scan");
-
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton2.setText("Tìm kiếm");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        btn_TimKiem.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btn_TimKiem.setText("Tìm kiếm");
+        btn_TimKiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_TimKiemActionPerformed(evt);
             }
         });
 
@@ -504,7 +532,7 @@ public class F_NhapSach extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_TimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(654, 654, 654))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -523,7 +551,7 @@ public class F_NhapSach extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(tf_MaHangHoa, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_TimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -657,9 +685,12 @@ public class F_NhapSach extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_MaHangHoaKeyTyped
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_TimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TimKiemActionPerformed
+        if (f_TimSach == null)
+            f_TimSach = new F_TimSach();
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+        f_TimSach.setVisible(true);
+    }//GEN-LAST:event_btn_TimKiemActionPerformed
 
     private void lb_TienHangPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_lb_TienHangPropertyChange
 
@@ -750,6 +781,10 @@ public class F_NhapSach extends javax.swing.JFrame {
                         thongBao = "Thanh toán thành công";
                         PrintBill();
                         Reset();
+                        if (f_TimSach != null) {
+                            f_TimSach.LoadSach();
+                            f_TimSach.Reset();
+                        }
                     } else {
                         thongBao = "Thanh toán không thành công";
                     }
@@ -765,6 +800,48 @@ public class F_NhapSach extends javax.swing.JFrame {
         Reset();
     }//GEN-LAST:event_btn_ThanhToan1ActionPerformed
 
+    private void lb_TempNhapHangPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_lb_TempNhapHangPropertyChange
+
+        DefaultTableModel mode = (DefaultTableModel) tableView.getModel();
+        String maSach = lb_TempNhapHang.getText();
+        if (maSach == null)
+        return;
+        else if (maSach.length() == 0)
+        return;
+
+        try{
+            Sach sach = BSach.getInstance().getSachByMa(maSach);
+            if (sach != null)
+                if (sach.getTinhTrang() == true){
+                    int index = GetIndexMaSachInTable(maSach.trim());
+                    if (index != -1) {
+                        mode.setValueAt((int)mode.getValueAt(index,2) + 1, index, 2);
+                        mode.setValueAt((int)mode.getValueAt(index,2) * (double)mode.getValueAt(index,3), index, 4);
+                    }
+                    else
+                        mode.addRow(new Object[]{sach.getMaSach(), sach.getTenSach(), 1, sach.getGiaBan(), 1*sach.getGiaBan()});
+                    lb_TienHang.setText(String.valueOf(TinhTongTien()));
+                }
+                else
+                    lb_ThemSach_ThongBao.setText("Sách " + sach.getTenSach() + " đã ngưng nhập");
+            else
+                lb_ThemSach_ThongBao.setText("Mã sách " + maSach + " không tồn tại");
+       }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "ERROR: " + e.getMessage());
+        }
+        lb_TempNhapHang.setText(null);
+    }//GEN-LAST:event_lb_TempNhapHangPropertyChange
+
+    private void lb_TempNhapHangVetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {//GEN-FIRST:event_lb_TempNhapHangVetoableChange
+        
+    }//GEN-LAST:event_lb_TempNhapHangVetoableChange
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        F_Scan.getInstance();
+    }//GEN-LAST:event_jButton1ActionPerformed
+    public static void lb_TempNhapHangChangeValue(String value){
+        lb_TempNhapHang.setText(value);
+    }
     /**
      * @param args the command line arguments
      */
@@ -802,14 +879,15 @@ public class F_NhapSach extends javax.swing.JFrame {
             }
         });
     }
+    private F_TimSach f_TimSach = null;
     private NhaCungCap nhaCungCap = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btn_ThanhToan;
     private javax.swing.JToggleButton btn_ThanhToan1;
+    private javax.swing.JButton btn_TimKiem;
     private javax.swing.JComboBox<String> cb_TenNCC;
     private com.toedter.calendar.JDateChooser date_NgayNhap;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -829,6 +907,7 @@ public class F_NhapSach extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton3;
+    private static javax.swing.JLabel lb_TempNhapHang;
     private javax.swing.JLabel lb_ThemSach_ThongBao;
     private javax.swing.JLabel lb_TienHang;
     private javax.swing.JTable tableView;

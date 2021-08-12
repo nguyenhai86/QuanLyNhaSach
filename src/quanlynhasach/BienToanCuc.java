@@ -43,15 +43,6 @@ public class BienToanCuc {
     private F_QuanLy f_QuanLy;
     private F_ThongTinCaNhan f_ThongTinCaNhan;
     private F_ThemKhachHang f_ThemKhachHang;
-    private boolean flag;
-
-    public boolean getFlag() {
-        return flag;
-    }
-
-    public void setFlag(boolean flag) {
-        this.flag = flag;
-    }
     
     public F_ThemKhachHang getF_ThemKhachHang() {
         if (f_ThemKhachHang == null || !f_ThemKhachHang.isVisible()) {

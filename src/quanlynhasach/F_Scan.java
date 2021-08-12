@@ -69,7 +69,7 @@ public class F_Scan extends javax.swing.JFrame implements Runnable, ThreadFactor
         result_field = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        panelWebcam = new javax.swing.JPanel();
 
         jButton1.setText("jButton1");
 
@@ -95,10 +95,10 @@ public class F_Scan extends javax.swing.JFrame implements Runnable, ThreadFactor
         jLabel1.setText("Resultado");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(250, 250, 250));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(230, 230, 230)));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 470, 300));
+        panelWebcam.setBackground(new java.awt.Color(250, 250, 250));
+        panelWebcam.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(230, 230, 230)));
+        panelWebcam.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(panelWebcam, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 470, 300));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 380));
 
@@ -145,8 +145,8 @@ public class F_Scan extends javax.swing.JFrame implements Runnable, ThreadFactor
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel panelWebcam;
     private javax.swing.JTextField result_field;
     // End of variables declaration//GEN-END:variables
 
@@ -160,7 +160,7 @@ public class F_Scan extends javax.swing.JFrame implements Runnable, ThreadFactor
         panel.setPreferredSize(size);
         panel.setFPSDisplayed(true);
 
-        jPanel2.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 300));
+        panelWebcam.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 300));
 
         executor.execute(this);
     }
@@ -195,7 +195,10 @@ public class F_Scan extends javax.swing.JFrame implements Runnable, ThreadFactor
 
                 if (result != null) {
                     result_field.setText(result.getText());
-                    F_Pos.lb_TempPosPosChangeValue(result.getText().trim());
+                    if (BienToanCuc.getInstance().getF_Pos().isVisible())
+                        F_Pos.lb_TempPosPosChangeValue(result.getText().trim());
+                    else if (BienToanCuc.getInstance().getF_NhapSach().isVisible())
+                        F_NhapSach.lb_TempNhapHangChangeValue(result.getText().trim());
                     
                     URL url = this.getClass().getClassLoader().getResource("Audio/tick.wav");
                 
@@ -214,7 +217,7 @@ public class F_Scan extends javax.swing.JFrame implements Runnable, ThreadFactor
     public F_Scan(JLabel jLabel1, JPanel jPanel1, JPanel jPanel2, JSeparator jSeparator1, JTextField result_field) throws HeadlessException {
         this.jLabel1 = jLabel1;
         this.jPanel1 = jPanel1;
-        this.jPanel2 = jPanel2;
+        this.panelWebcam = jPanel2;
         this.jSeparator1 = jSeparator1;
         this.result_field = result_field;
     }
