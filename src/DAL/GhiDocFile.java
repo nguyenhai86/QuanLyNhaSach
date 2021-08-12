@@ -31,7 +31,7 @@ public class GhiDocFile {
     
     public boolean GhiFile(String value){
         try{
-            FileOutputStream fis = new FileOutputStream("src/Database/connectionUrl.bat");
+            FileOutputStream fis = new FileOutputStream("src/Database/connectionUrl.ini");
             OutputStreamWriter osw = new OutputStreamWriter(fis,"UTF-8");
             BufferedWriter bw = new BufferedWriter(osw);
             bw.write(value);
@@ -47,7 +47,7 @@ public class GhiDocFile {
     {
         String str = null;
         try{
-            FileInputStream fis = new FileInputStream("src/Database/connectionUrl.bat");
+            FileInputStream fis = new FileInputStream("src/Database/connectionUrl.ini");
             InputStreamReader iSr = new InputStreamReader(fis,"UTF-8");
             BufferedReader br = new BufferedReader(iSr);
 

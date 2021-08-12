@@ -80,7 +80,7 @@ public class F_About extends javax.swing.JFrame {
         jLabel33.setText("Ngày hoàn thành :");
 
         jLabel34.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel34.setText("3/8/2021");
+        jLabel34.setText("12/08/2021");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

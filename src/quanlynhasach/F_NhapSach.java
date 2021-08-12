@@ -837,7 +837,7 @@ public class F_NhapSach extends javax.swing.JFrame {
     }//GEN-LAST:event_lb_TempNhapHangVetoableChange
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        F_Scan.getInstance();
+        F_Scan.getInstance().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
     public static void lb_TempNhapHangChangeValue(String value){
         lb_TempNhapHang.setText(value);

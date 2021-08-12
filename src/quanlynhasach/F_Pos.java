@@ -996,7 +996,7 @@ public class F_Pos extends javax.swing.JFrame {
     }//GEN-LAST:event_lb_TempPosPropertyChange
 
     private void btn_ScanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ScanActionPerformed
-        F_Scan.getInstance();
+        F_Scan.getInstance().setVisible(true);
     }//GEN-LAST:event_btn_ScanActionPerformed
 
     private void tableViewMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableViewMousePressed
