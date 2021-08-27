@@ -20,9 +20,9 @@ CREATE TABLE NHANVIEN
 	NgaySinh DATE CHECK(NgaySinh < GETDATE()),
 	SoCMND CHAR(13) NOT NULL UNIQUE,
 	DienThoai CHAR(10) NOT NULL,
+	ChucVu BIT NOT NULL, 
 	TinhTrang BIT DEFAULT 1, --1: Đang làm việc, 0: Thôi việc
 );
-
 CREATE TABLE TAIKHOAN
 (
     TenDN   CHAR(20) PRIMARY KEY,
@@ -138,11 +138,11 @@ CREATE TABLE CHITIETPHIEUNHAP
 
 --Nhap Lieu------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO NHANVIEN(MaNhanVien,TenNhanVien,GioiTinh,NgaySinh,SoCMND,DienThoai)
+INSERT INTO NHANVIEN(MaNhanVien,TenNhanVien,GioiTinh,NgaySinh,SoCMND,DienThoai,ChucVu)
 VALUES
-    ( 'NV001', N'Phan Hồ Thái Anh',N'Nam','18/09/2000','215678987','098765890'),
-    ( 'NV002', N'Nguyễn Lưu Nguyệt',N'Nữ','18/12/2001','289786789','098880987' ),
-    ( 'NV003', N'Phạm Ánh Nguyệt',N'Nữ','19/02/2002','223322333','0986578321' );
+    ( 'NV001', N'Phan Hồ Thái Anh',N'Nam','18/09/2000','215678987','098765890',1),
+    ( 'NV002', N'Nguyễn Lưu Nguyệt',N'Nữ','18/12/2001','289786789','098880987',0 ),
+    ( 'NV003', N'Phạm Ánh Nguyệt',N'Nữ','19/02/2002','223322333','0986578321',0 );
 
 INSERT INTO TAIKHOAN(TenDN,MatKhau,MaNhanVien)
 VALUES
