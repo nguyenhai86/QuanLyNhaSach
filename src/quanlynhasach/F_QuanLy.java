@@ -130,7 +130,7 @@ public class F_QuanLy extends javax.swing.JFrame {
                 DefaultTableModel mode = (DefaultTableModel)this.tb_HD_CTHD.getModel();
                 mode.setRowCount(0);   
                 for(ChiTietHoaDon cthd:chiTietHoaDons){     
-                    mode.addRow(new Object[]{cthd.getMaSach(),cthd.getTenSach(), cthd.getSoLuong(), cthd.getGiaBan()});
+                    mode.addRow(new Object[]{cthd.getMaSach(),cthd.getTenSach(), cthd.getSoLuong(), cthd.getGiaBan(), cthd.getSoLuong()*cthd.getGiaBan()});
                 }
         }  
     }

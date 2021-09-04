@@ -133,7 +133,7 @@ public class F_Pos extends javax.swing.JFrame {
         tf_Bill.setText(tf_Bill.getText() + "\n--------------------------------------------------------------------------------------------");
         tf_Bill.setText(tf_Bill.getText() + "\n"+"\t"+"\t"+"\t"+"\t"+"Tổng tiền: " +"\t"+ lb_TienHang.getText());
         tf_Bill.setText(tf_Bill.getText() + "\n\tCảm ơn và Hẹn gặp lại!");
-        //tf_Bill.print();
+        tf_Bill.print();
         }catch(Exception e){
             JOptionPane.showMessageDialog(this,"ERROR: " + e.getMessage());
         }
@@ -335,6 +335,7 @@ public class F_Pos extends javax.swing.JFrame {
         });
 
         btn_ThemKH.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btn_ThemKH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8_plus_20px.png"))); // NOI18N
         btn_ThemKH.setMaximumSize(new java.awt.Dimension(51, 23));
         btn_ThemKH.setMinimumSize(new java.awt.Dimension(51, 23));
         btn_ThemKH.addActionListener(new java.awt.event.ActionListener() {
@@ -486,9 +487,8 @@ public class F_Pos extends javax.swing.JFrame {
                                 .addComponent(btn_TaoMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(50, 50, 50)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lb_ThoiLai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lb_TienHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lb_ThoiLai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lb_TienHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tf_TienKhachDua, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btn_ThanhToan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)))
@@ -609,9 +609,8 @@ public class F_Pos extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btn_TimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(29, 29, 29)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

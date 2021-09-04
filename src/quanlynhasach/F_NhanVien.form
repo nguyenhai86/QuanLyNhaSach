@@ -187,12 +187,12 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jScrollPane3" max="32767" attributes="0"/>
-                          <Component id="jPanel1" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jScrollPane3" min="-2" pref="505" max="-2" attributes="0"/>
+                          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="14" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -298,7 +298,7 @@
                           <Component id="tf_NV_Search" min="-2" pref="770" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btn_NV_Search" min="-2" pref="55" max="-2" attributes="0"/>
-                          <EmptySpace pref="393" max="32767" attributes="0"/>
+                          <EmptySpace pref="395" max="32767" attributes="0"/>
                           <Component id="lb_NV_NhanVien" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
@@ -402,13 +402,13 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="tf_NV_TenNV" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <Component id="rb_NV_Nam" min="-2" pref="93" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Component id="rb_NV_Nu" min="-2" pref="93" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="date_NV_NgaySinh" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tf_NV_TenNV" alignment="0" min="-2" pref="267" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -669,7 +669,7 @@
                           <Component id="jScrollPane6" alignment="0" pref="568" max="32767" attributes="0"/>
                           <Component id="jPanel11" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

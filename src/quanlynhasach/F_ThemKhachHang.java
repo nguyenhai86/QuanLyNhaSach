@@ -37,6 +37,7 @@ public class F_ThemKhachHang extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         tf_KH_TenKH = new javax.swing.JTextField();
@@ -77,10 +78,12 @@ public class F_ThemKhachHang extends javax.swing.JFrame {
         jLabel37.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel37.setText("Tình trạng");
 
+        buttonGroup1.add(rb_KH_BinhThuong);
         rb_KH_BinhThuong.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         rb_KH_BinhThuong.setSelected(true);
         rb_KH_BinhThuong.setText("Bình Thường");
 
+        buttonGroup1.add(rb_KH_NgungBan);
         rb_KH_NgungBan.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         rb_KH_NgungBan.setText("Ngừng bán");
 
@@ -214,6 +217,7 @@ public class F_ThemKhachHang extends javax.swing.JFrame {
 
                 if (BKhachHang.getInstance().ThemKhachHang(khachHang)) {
                     thongBao = "Thêm khách hàng thành công";
+                    this.dispose();
                 }
                 else{
                     thongBao = "Thêm khách hàng không thành công";
@@ -273,6 +277,7 @@ public class F_ThemKhachHang extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btn_KH_Them;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cb_KH_NKH;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;

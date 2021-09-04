@@ -1,1 +1,0 @@
-jdbc:sqlserver://NguyenHaiPC:1433;databaseName=master;user=sa;password=123

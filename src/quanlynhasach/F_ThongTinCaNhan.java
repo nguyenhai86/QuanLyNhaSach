@@ -196,6 +196,7 @@ public class F_ThongTinCaNhan extends javax.swing.JFrame {
                                 tf_MatKhauCu.setText(null);
                                 tf_MatKhauMoi.setText(null);
                                 tf_NhapLai.setText(null);
+                                this.dispose();
                             }
                             else
                                 JOptionPane.showMessageDialog(this, "Không thành công");

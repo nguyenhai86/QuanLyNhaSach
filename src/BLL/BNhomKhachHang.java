@@ -59,7 +59,7 @@ public class BNhomKhachHang {
             NhomKhachHang nhomKhachHang = new NhomKhachHang();
             nhomKhachHang.setMaNhom(rs.getString("MaNhomKhachHang").trim());
             nhomKhachHang.setTenNhom(rs.getString("TenNhom").trim());
-            nhomKhachHang.setGhiChu(rs.getString("GhiChu").trim());
+            nhomKhachHang.setGhiChu(rs.getString("GhiChu"));
             nhomKhachHangs.add(nhomKhachHang);
         }
         DataProvider.getInstance().Close();

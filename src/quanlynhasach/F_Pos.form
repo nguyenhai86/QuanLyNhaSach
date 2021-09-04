@@ -84,9 +84,8 @@
                           <Component id="btn_TimKiem" min="-2" pref="102" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="679" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -266,10 +265,8 @@
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="lb_ThoiLai" max="32767" attributes="0"/>
-                                      <Component id="lb_TienHang" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="lb_ThoiLai" max="32767" attributes="0"/>
+                                  <Component id="lb_TienHang" max="32767" attributes="0"/>
                                   <Component id="tf_TienKhachDua" alignment="1" max="32767" attributes="0"/>
                                   <Component id="btn_ThanhToan" alignment="1" pref="217" max="32767" attributes="0"/>
                               </Group>
@@ -451,6 +448,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Image/icons8_plus_20px.png"/>
                 </Property>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[51, 23]"/>
