@@ -63,7 +63,7 @@ EXEC P_getNhaCungCap;
 GO
 --==================================================================================================================================================
 
-CREATE PROC P_GetAllHoaDon
+ALTER PROC P_GetAllHoaDon
 AS
 BEGIN
 	SELECT MaHoaDon,CONVERT(CHAR(12),NgayBan,103) AS NgayBan, TenNhanVien, TenKhachHang, hd.TongTien
@@ -128,10 +128,10 @@ BEGIN
 END
 GO
 --==================================================================================================================================================
-CREATE PROC P_GetAllPhieuNhap
+ALTER PROC P_GetAllPhieuNhap
 AS
 BEGIN
-	SELECT pn.MaPhieuNhap, CONVERT(CHAR(10), PN.NgayNhap, 103) AS NgayNhap, NV.TenNhanVien, ncc.TenNCC FROM dbo.PHIEUNHAP PN
+	SELECT pn.MaPhieuNhap, CONVERT(CHAR(10), PN.NgayNhap, 103) AS NgayNhap, NV.TenNhanVien, ncc.TenNCC,NCC.TongTien FROM dbo.PHIEUNHAP PN
 	JOIN dbo.NHACUNGCAP NCC ON NCC.MaNCC = PN.MaNCC
 	JOIN dbo.NHANVIEN NV ON NV.MaNhanVien = PN.MaNhanVien
 	ORDER BY CONVERT(INT,SUBSTRING(PN.MaPhieuNhap,3,100)) DESC
@@ -299,6 +299,4 @@ BEGIN
 	RETURN @DoanhThu
 END
 GO
-
-PRINT CONVERT(CHAR(10),	DATEDIFF(GETDATE()),103)
 

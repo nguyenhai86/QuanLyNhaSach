@@ -45,6 +45,7 @@ public class BPhieuNhap {
             phieuNhap.setNgayNhap(DateBox.getDate(rs.getString("NgayNhap")));
             phieuNhap.setTenNhanVien(rs.getString("TenNhanVien").trim());
             phieuNhap.setTenNhaCungCap(rs.getString("TenNCC").trim());
+            phieuNhap.setTongTien(rs.getDouble("TongTien"));
             phieuNhaps.add(phieuNhap);
         }
         DataProvider.getInstance().Close();
@@ -69,7 +70,7 @@ public class BPhieuNhap {
     }
     
     public ArrayList<PhieuNhap> BoLoc (String maPhieuNhap, String tenNhanVien, String tenNhaCungCap, Date dateBD, Date dateKT) throws SQLException{
-        String sql = "SET DATEFORMAT DMY SELECT pn.MaPhieuNhap, CONVERT(CHAR(10), PN.NgayNhap, 103) AS NgayNhap, NV.TenNhanVien, ncc.TenNCC FROM dbo.PHIEUNHAP PN JOIN dbo.NHACUNGCAP NCC ON NCC.MaNCC = PN.MaNCC JOIN dbo.NHANVIEN NV ON NV.MaNhanVien = PN.MaNhanVien WHERE 1=1 ";
+        String sql = "SET DATEFORMAT DMY SELECT pn.MaPhieuNhap, CONVERT(CHAR(10), PN.NgayNhap, 103) AS NgayNhap, NV.TenNhanVien, ncc.TenNCC, ncc.TongTien FROM dbo.PHIEUNHAP PN JOIN dbo.NHACUNGCAP NCC ON NCC.MaNCC = PN.MaNCC JOIN dbo.NHANVIEN NV ON NV.MaNhanVien = PN.MaNhanVien WHERE 1=1 ";
         boolean[] bit = new boolean[5];
         
         if (maPhieuNhap.trim().length() != 0) {
@@ -104,6 +105,7 @@ public class BPhieuNhap {
             phieuNhap.setNgayNhap(DateBox.getDate(rs.getString("NgayNhap")));
             phieuNhap.setTenNhanVien(rs.getString("TenNhanVien").trim());
             phieuNhap.setTenNhaCungCap(rs.getString("TenNCC").trim());
+            phieuNhap.setTongTien(rs.getDouble("TongTien"));
             phieuNhaps.add(phieuNhap);
         }
         DataProvider.getInstance().Close();

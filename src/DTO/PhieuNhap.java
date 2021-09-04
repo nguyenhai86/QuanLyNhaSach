@@ -14,6 +14,15 @@ import java.util.Date;
 public class PhieuNhap {
     private String maPhieuNhap, tenNhanVien, tenNhaCungCap;
     private Date ngayNhap;
+    private double TongTien;
+
+    public double getTongTien() {
+        return TongTien;
+    }
+
+    public void setTongTien(double TongTien) {
+        this.TongTien = TongTien;
+    }
     
     public String getMaPhieuNhap() {
         return maPhieuNhap;

@@ -139,7 +139,7 @@ public class F_QuanLy extends javax.swing.JFrame {
             DefaultTableModel mode = (DefaultTableModel)this.tb_PhieuNhap.getModel();
             mode.setRowCount(0);
             for(PhieuNhap pn:phieuNhaps){
-                mode.addRow(new Object[]{pn.getMaPhieuNhap(), DateBox.ConvertToString(pn.getNgayNhap()), pn.getTenNhanVien(), pn.getTenNhaCungCap()});
+                mode.addRow(new Object[]{pn.getMaPhieuNhap(), DateBox.ConvertToString(pn.getNgayNhap()), pn.getTenNhanVien(), pn.getTenNhaCungCap(),pn.getTongTien()});
             }
         }
     }
@@ -1535,7 +1535,7 @@ public class F_QuanLy extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Mã sách", "Tên sách", "Số lượng", "Giá nhập", "ThanhTien"
+                "Mã sách", "Tên sách", "Số lượng", "Giá nhập", "Thành tiền"
             }
         ) {
             Class[] types = new Class [] {

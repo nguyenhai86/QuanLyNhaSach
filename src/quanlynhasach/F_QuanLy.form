@@ -2087,7 +2087,7 @@
                         <Column editable="true" title="T&#xea;n s&#xe1;ch" type="java.lang.String"/>
                         <Column editable="true" title="S&#x1ed1; l&#x1b0;&#x1ee3;ng" type="java.lang.Integer"/>
                         <Column editable="true" title="Gi&#xe1; nh&#x1ead;p" type="java.lang.Double"/>
-                        <Column editable="true" title="ThanhTien" type="java.lang.Double"/>
+                        <Column editable="true" title="Th&#xe0;nh ti&#x1ec1;n" type="java.lang.Double"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
