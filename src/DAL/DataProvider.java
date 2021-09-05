@@ -13,13 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.Date;
-import java.util.Hashtable;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
+
 
 /**
  *
@@ -210,19 +204,5 @@ public class DataProvider {
                 break;
         }
         return dem;
-    }
-    public void XuatHoaDon(String maHD){
-        try{
-            Open();
-            Hashtable map = new Hashtable();
-            JasperReport report = JasperCompileManager.compileReport("src/quanlynhasach/XuatHoaDon.jrxml");
-            map.put("MaHoaDon", maHD);
-            JasperPrint p = JasperFillManager.fillReport(report, map,connection);
-            JasperViewer.viewReport(p,false);
-            JasperExportManager.exportReportToPdfFile(p, "test.pdf");
-            Close();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
     }
 }

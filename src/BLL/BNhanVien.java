@@ -8,11 +8,9 @@ package BLL;
 import DAL.DataProvider;
 import DTO.DateBox;
 import DTO.NhanVien;
-import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 
 /**
  *

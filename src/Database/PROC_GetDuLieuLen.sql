@@ -63,7 +63,7 @@ EXEC P_getNhaCungCap;
 GO
 --==================================================================================================================================================
 
-ALTER PROC P_GetAllHoaDon
+CREATE PROC P_GetAllHoaDon
 AS
 BEGIN
 	SELECT MaHoaDon,CONVERT(CHAR(12),NgayBan,103) AS NgayBan, TenNhanVien, TenKhachHang, hd.TongTien
@@ -128,7 +128,7 @@ BEGIN
 END
 GO
 --==================================================================================================================================================
-ALTER PROC P_GetAllPhieuNhap
+CREATE PROC P_GetAllPhieuNhap
 AS
 BEGIN
 	SELECT pn.MaPhieuNhap, CONVERT(CHAR(10), PN.NgayNhap, 103) AS NgayNhap, NV.TenNhanVien, ncc.TenNCC,NCC.TongTien FROM dbo.PHIEUNHAP PN
@@ -211,7 +211,7 @@ END;
 GO
 
 --==================================================================================================================================================
-ALTER PROC P_XuatHoaDon
+CREATE PROC P_XuatHoaDon
 	@MaHoaDon CHAR(10)
 AS
 BEGIN
@@ -292,10 +292,8 @@ BEGIN
 	DECLARE @DoanhThu MONEY = 0
 	IF(@value = 0) -- Hom nay
 		SELECT @DoanhThu = TongTien FROM dbo.HOADON WHERE NgayBan = GETDATE()
-	ELSE IF(@value == 1) -- Hom qua
+	ELSE IF(@value = 1) -- Hom qua
 		SELECT @DoanhThu = TongTien FROM dbo.HOADON WHERE NgayBan = GETDATE()
-
-
 	RETURN @DoanhThu
 END
 GO

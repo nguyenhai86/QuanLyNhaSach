@@ -10,11 +10,9 @@ import BLL.BNhaCungCap;
 import BLL.BNhanVien;
 import BLL.BNhomSach;
 
-import BLL.BPhieuNhap;
 import BLL.BSach;
 import BLL.BPhieuNhap;
 import BLL.BQuanLy;
-import DAL.DataProvider;
 import DTO.ChiTietHoaDon;
 import DTO.HoaDon;
 import DTO.PhieuNhap;
@@ -24,26 +22,17 @@ import DTO.NhaCungCap;
 import DTO.NhanVien;
 import DTO.NhomSach;
 import DTO.Sach;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.DefaultCellEditor;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -108,7 +97,7 @@ public class F_QuanLy extends javax.swing.JFrame {
             lb_TTK_HangCon.setText(String.valueOf(BSach.getInstance().TinhSoSachTon()));
             lb_TTK_HetHang.setText(String.valueOf(BSach.getInstance().TinhSachHetHang()));
         }catch(Exception e){
-            
+            JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }
     public void Table_Header_Component(JTable table){

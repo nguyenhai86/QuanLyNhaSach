@@ -8,7 +8,6 @@ package BLL;
 import DAL.DataProvider;
 import DTO.TaiKhoan;
 
-import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;

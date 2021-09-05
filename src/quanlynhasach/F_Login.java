@@ -7,7 +7,6 @@ package quanlynhasach;
 
 import BLL.BNhanVien;
 import BLL.BTaiKhoan;
-import DTO.NhanVien;
 import javax.swing.JOptionPane;
 
 /**

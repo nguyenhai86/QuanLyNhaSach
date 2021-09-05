@@ -110,7 +110,7 @@ public class BienToanCuc {
         return f_Pos;
     }
     public F_QuanLy getF_QuanLy() {
-        if (f_QuanLy == null || !f_QuanLy.isFocusable()) {
+        if (f_QuanLy == null || !f_QuanLy.isVisible()) {
             f_QuanLy = new F_QuanLy();
             f_QuanLy.setLocationRelativeTo(null);
         }
