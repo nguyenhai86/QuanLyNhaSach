@@ -237,3 +237,5 @@ END;
 GO
 
 --EXEC dbo.P_DeleteAllData
+
+SELECT * FROM dbo.CHITIETHOADON
